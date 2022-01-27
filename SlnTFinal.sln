@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.TFinal.Repositories.Dap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.TFinal.UnitOfWork", "App.TFinal.UnitOfWork\App.TFinal.UnitOfWork.csproj", "{A1DCE11A-A9AA-48B9-AA85-5B03AD30C16D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Datos", "Datos", "{AAFD70B1-788B-4E3A-8F1E-033D394BFF09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A437F804-085C-4B42-AEEA-73860C11053E} = {AAFD70B1-788B-4E3A-8F1E-033D394BFF09}
+		{B7C8BCD3-3793-4FA8-8F76-2487E90AD2FD} = {AAFD70B1-788B-4E3A-8F1E-033D394BFF09}
+		{5C696D33-FA1B-427A-8EB4-3279AC2EC5AA} = {AAFD70B1-788B-4E3A-8F1E-033D394BFF09}
+		{A1DCE11A-A9AA-48B9-AA85-5B03AD30C16D} = {AAFD70B1-788B-4E3A-8F1E-033D394BFF09}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3BE5E9B0-A978-442A-8DC5-760D70469780}
