@@ -8,22 +8,23 @@ using System.Web;
 using System.Web.Mvc;
 namespace App.TFinal.WebMVC.Controllers
 {
-    [AllowAnonymous]
+    //[AllowAnonymous]
     public class HomeController : Controller
     {
         private IUnitOfWork _unit = new VentasUnitOfWork("");
 
         public ActionResult Index()
         {
-          
-          
+
+            //var objUsuarios = _unit.Usuarios.BuscarPorId(1);
             return View();
         }
 
         public ActionResult ObtenerRol()
         {
             //VERIFICACION
-                      var objUsuarios = _unit.Usuarios.BuscarPorId(1);
+            var obj = _unit.Rols.BuscarPorId(1);
+            var objUsuarios = _unit.Usuarios.BuscarPorId(1);
                       return View();
         }
 

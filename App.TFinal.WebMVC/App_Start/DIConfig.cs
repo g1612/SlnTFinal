@@ -22,7 +22,7 @@ namespace App.TFinal.WebMVC.App_Start
             container.Options.DefaultScopedLifestyle = new WebRequestLifestyle();
 
             container.Register<IUnitOfWork>(() =>
-                    new VentasUnitOfWork(ConfigurationManager.ConnectionStrings["VentasConnection"].ToString()));
+                    new VentasUnitOfWork(ConfigurationManager.ConnectionStrings["BoletosConnection"].ToString()));
 
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
 
