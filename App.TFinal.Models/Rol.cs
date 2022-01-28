@@ -12,7 +12,7 @@ namespace App.TFinal.Models
         {
             get; set;
         }
-        public string Nombre
+        public string CRol
         {
             get; set;
         }

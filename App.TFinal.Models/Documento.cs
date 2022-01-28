@@ -12,7 +12,7 @@ namespace App.TFinal.Models
         {
             get; set;
         }
-        public string Documentos
+        public string Documento
         {
             get; set;
         }
