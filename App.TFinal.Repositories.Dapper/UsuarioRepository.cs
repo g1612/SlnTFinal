@@ -30,7 +30,7 @@ namespace App.TFinal.Repositories.Dapper
             {
                 var parameters = new DynamicParameters();
                 parameters.Add("@nombres", nombres);
-                return await connection.QueryAsync<Usuario>("select Id, Nombre, Estado from dbo.Categoria " +
+                return await connection.QueryAsync<Usuario>("select Id, Nombres, Estado from dbo.usuario " +
                                                         "where Nombres like '%@nombres%'", parameters,
                                                         commandType: System.Data.CommandType.Text);
             }

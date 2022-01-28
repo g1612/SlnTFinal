@@ -9,8 +9,8 @@ using System.Web.Mvc;
 
 namespace App.TFinal.WebMVC.Controllers
 {
-    [ErrorActionFilter]
-    [Authorize]
+   // [ErrorActionFilter]
+    //[Authorize]
     public class BaseController : Controller
     {
         protected IUnitOfWork _unit;
