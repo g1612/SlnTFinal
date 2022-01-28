@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDocumentoRepositories.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="IRolRepositories.cs" />
+    <Compile Include="ISalaRepositories.cs" />
     <Compile Include="IUsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
