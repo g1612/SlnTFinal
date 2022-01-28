@@ -17,7 +17,7 @@
           rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="~/Content/Templates/Default/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -368,7 +368,7 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-
+                    @RenderBody()
                 </div>
                 <!-- /.container-fluid -->
 
@@ -423,7 +423,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="~/Content/Templates/Default/js/sb-admin-2.min.js"></script>
-    @RenderBody()
+  
 </body>
 
 </html>

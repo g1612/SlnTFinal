@@ -1,16 +1,30 @@
-﻿using System;
+﻿using App.TFinal.Repositories;
+using App.TFinal.Repositories.Dapper;
+using App.TFinal.UnitOfWork;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
 namespace App.TFinal.WebMVC.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
+        private IUnitOfWork _unit = new VentasUnitOfWork("");
+
         public ActionResult Index()
         {
+          
+          
             return View();
+        }
+
+        public ActionResult ObtenerRol()
+        {
+            //VERIFICACION
+                      var objUsuarios = _unit.Usuarios.BuscarPorId(1);
+                      return View();
         }
 
         public ActionResult About()
