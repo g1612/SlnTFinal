@@ -14,7 +14,7 @@ namespace App.TFinal.UnitOfWork
         {
             //Categorias = new CategoriaRepository(connectionString);
             //Marcas = new MarcaRepository(connectionString);
-            //Rols = new RolRepository(connectionString);
+            Rols = new RolRepository(connectionString);
             //Clientes = new ClienteRepository(connectionString);
             //Productos = new ProductoRepository(connectionString);
             Usuarios = new UsuarioRepository(connectionString);
@@ -37,11 +37,11 @@ namespace App.TFinal.UnitOfWork
         //    get;
         //    private set;
         //}
-        //public IRolRepository Rols
-        //{
-        //    get;
-        //    private set;
-        //}
+        public IRolRepository Rols
+        {
+            get;
+            private set;
+        }
         //public IClienteRepository Clientes
         //{
         //    get;

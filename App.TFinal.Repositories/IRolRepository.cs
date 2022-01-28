@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace App.TFinal.Repositories
 {
-   public interface IRolRepositories : IRepository<Rol>
+   public interface IRolRepository : IRepository<Rol>
     {
                Rol BuscarPorId(int id);
               Task<IEnumerable<Rol>> Listar(string Descripcion);

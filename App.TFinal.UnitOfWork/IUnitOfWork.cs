@@ -12,7 +12,7 @@ namespace App.TFinal.UnitOfWork
         //ICategoriaRepository Categorias { get; }
         //IVentaRepository Ventas { get; }
         //IMarcaRepository Marcas { get; }
-        //IRolRepository Rols { get; }
+        IRolRepository Rols { get; }
         //IClienteRepository Clientes { get; }
         //IProductoRepository Productos { get; }
        IUsuarioRepository Usuarios { get; }

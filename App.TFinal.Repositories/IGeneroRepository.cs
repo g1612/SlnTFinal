@@ -7,10 +7,10 @@ using App.TFinal.Models;
 
 namespace App.TFinal.Repositories
 {
-  public  interface ISalaRepositories : IRepository<Sala>
+    interface IGeneroRepository : IRepository<Genero>
     {
-        Sala BuscarPorId(int id);
-        Task<IEnumerable<Sala>> Listar(string Descripcion);
+        Genero BuscarPorId(int id);
+        Task<IEnumerable<Genero>> Listar(string Descripcion);
         Task<int> Eliminar(int id);
 
 

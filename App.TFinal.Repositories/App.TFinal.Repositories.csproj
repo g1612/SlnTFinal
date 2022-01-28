@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDocumentoRepositories.cs" />
-    <Compile Include="IGeneroRepositories.cs" />
+    <Compile Include="IDocumentoRepository.cs" />
+    <Compile Include="IGeneroRepository.cs" />
     <Compile Include="IRepository.cs" />
-    <Compile Include="IRolRepositories.cs" />
-    <Compile Include="ISalaRepositories.cs" />
+    <Compile Include="IRolRepository.cs" />
+    <Compile Include="ISalaRepository.cs" />
     <Compile Include="IUsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
