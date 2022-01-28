@@ -7,30 +7,29 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace App.TFinal.Repositories.Dapper
 {
-    public class RolRepository : Repository<Rol>, IRolRepository
+   public class SalaRepository : Repository<Sala>, ISalaRepository
     {
 
-        public RolRepository(string connectionString) : base(connectionString)
+        public SalaRepository(string connectionString) : base(connectionString)
         {
         }
 
-        public Rol BuscarPorId(int id)
+        public Sala BuscarPorId(int id)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                return connection.GetAll<Rol>().Where(c => c.Id.Equals(id)).First();
+                return connection.GetAll<Sala>().Where(c => c.Id.Equals(id)).First();
             }
         }
-        public async Task<IEnumerable<Rol>> Listar(string nombres)
+        public async Task<IEnumerable<Sala>> Listar(string nombres)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 var parameters = new DynamicParameters();
                 parameters.Add("@nombres", nombres);
-                return await connection.QueryAsync<Rol>("select Id, CRol, Descripcion,Estado from dbo.Rol " +
+                return await connection.QueryAsync<Sala>("select Id, NSala, Descripcion,Capacidad,Estado from dbo.Sala " +
                                                         "where Descripcion like '%@nombres%'", parameters,
                                                         commandType: System.Data.CommandType.Text);
             }
@@ -41,13 +40,13 @@ namespace App.TFinal.Repositories.Dapper
             {
                 var parameters = new DynamicParameters();
                 parameters.Add("@id", id);
-                return await connection.ExecuteAsync("update dbo.Rol " +
+                return await connection.ExecuteAsync("update dbo.Sala " +
                                                 "set Estado = 0 " +
                                                 "where Id = @id", parameters,
                                                 commandType: System.Data.CommandType.Text);
             }
         }
 
-      
+
     }
 }
