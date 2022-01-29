@@ -10,27 +10,27 @@ using System.Threading.Tasks;
 
 namespace App.TFinal.Repositories.Dapper
 {
-    public class RolRepository : Repository<Rol>, IRolRepository
+   public class GeneroRepository : Repository<Genero>, IGeneroRepository
     {
 
-        public RolRepository(string connectionString) : base(connectionString)
+        public GeneroRepository(string connectionString) : base(connectionString)
         {
         }
 
-        public Rol BuscarPorId(int id)
+        public Genero BuscarPorId(int id)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                return connection.GetAll<Rol>().Where(c => c.Id.Equals(id)).First();
+                return connection.GetAll<Genero>().Where(c => c.Id.Equals(id)).First();
             }
         }
-        public async Task<IEnumerable<Rol>> Listar(string nombres)
+        public async Task<IEnumerable<Genero>> Listar(string nombres)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 var parameters = new DynamicParameters();
                 parameters.Add("@nombres", nombres);
-                return await connection.QueryAsync<Rol>("select Id, CRol, Descripcion,Estado from dbo.Rol " +
+                return await connection.QueryAsync<Genero>("select Id, CGenero, Descripcion,Estado from dbo.Genero " +
                                                         "where Descripcion like '%@nombres%'", parameters,
                                                         commandType: System.Data.CommandType.Text);
             }
@@ -41,13 +41,14 @@ namespace App.TFinal.Repositories.Dapper
             {
                 var parameters = new DynamicParameters();
                 parameters.Add("@id", id);
-                return await connection.ExecuteAsync("update dbo.Rol " +
+                return await connection.ExecuteAsync("update dbo.Genero " +
                                                 "set Estado = 0 " +
                                                 "where Id = @id", parameters,
                                                 commandType: System.Data.CommandType.Text);
             }
         }
 
-      
+
     }
 }
+

@@ -10,10 +10,10 @@ namespace App.TFinal.UnitOfWork
     public interface IUnitOfWork
     {
         //ICategoriaRepository Categorias { get; }
-        //IVentaRepository Ventas { get; }
-        //IMarcaRepository Marcas { get; }
+        IDocumentoRepository Documentos { get; }
+        IGeneroRepository Generos { get; }
         IRolRepository Rols { get; }
-        //IClienteRepository Clientes { get; }
+        ISalaRepository Salas { get; }
         //IProductoRepository Productos { get; }
        IUsuarioRepository Usuarios { get; }
         //IProveedorRepository Proveedores { get; }
