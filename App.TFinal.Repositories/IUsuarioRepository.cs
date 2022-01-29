@@ -17,5 +17,9 @@ namespace App.TFinal.Repositories
         Task<int> Eliminar(int id);
 
         Task<Usuario> ValidarUsuario(string email, string password);
+
+
+        Task<MensajeRetorno> CrearUsuario(Usuario usuario);
+
     }
 }
