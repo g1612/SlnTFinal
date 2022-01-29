@@ -12,8 +12,9 @@ namespace App.TFinal.UnitOfWork
     {
         public VentasUnitOfWork(string connectionString)
         {
-            //Categorias = new CategoriaRepository(connectionString);
-            //Marcas = new MarcaRepository(connectionString);
+            Generos = new GeneroRepository(connectionString);
+            Documentos = new DocumentoRepository(connectionString);
+            Salas = new SalaRepository(connectionString);
             Rols = new RolRepository(connectionString);
             //Clientes = new ClienteRepository(connectionString);
             //Productos = new ProductoRepository(connectionString);
@@ -24,19 +25,21 @@ namespace App.TFinal.UnitOfWork
         }
 
 
-        //public ICategoriaRepository Categorias
-        //{
-        //    get;
-        //    private set;
-        //}
-        //public IVentaRepository Ventas { 
-        //    get; 
-        //    private set; 
-        //}
-        //public IMarcaRepository Marcas {
-        //    get;
-        //    private set;
-        //}
+        public IGeneroRepository Generos
+        {
+            get;
+            private set;
+        }
+        public IDocumentoRepository Documentos
+        {
+            get;
+            private set;
+        }
+        public ISalaRepository Salas
+        {
+            get;
+            private set;
+        }
         public IRolRepository Rols
         {
             get;
