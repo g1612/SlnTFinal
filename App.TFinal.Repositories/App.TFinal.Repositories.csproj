@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="IDocumentoRepository.cs" />
     <Compile Include="IGeneroRepository.cs" />
+    <Compile Include="IPeliculaRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IRolRepository.cs" />
     <Compile Include="ISalaRepository.cs" />
