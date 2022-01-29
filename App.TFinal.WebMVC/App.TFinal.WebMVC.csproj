@@ -2174,6 +2174,9 @@
     <Content Include="Views\Sala\Create.cshtml" />
     <Content Include="Views\Sala\Edit.cshtml" />
     <Content Include="Views\Sala\Delete.cshtml" />
+    <Content Include="Views\Usuario\Login.cshtml" />
+    <Content Include="Views\Usuario\Login2.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

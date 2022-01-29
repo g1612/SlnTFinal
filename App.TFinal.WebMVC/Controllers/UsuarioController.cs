@@ -48,8 +48,14 @@ namespace App.TFinal.WebMVC.Controllers
                 // TODO: Add insert logic here
                 if (ModelState.IsValid)
                 {
-                    await _unit.Usuarios.Agregar(usuario);
-                    return RedirectToAction("Index");
+                    //await _unit.Usuarios.Agregar(usuario);
+                    var mensajeRetorno = await _unit.Usuarios.CrearUsuario(usuario);
+                    if (mensajeRetorno.Objeto != null) return RedirectToAction("Index", "Home");
+                    else
+                    {
+                        ViewBag.ErrorMessage = mensajeRetorno.Mensaje;
+                        return View(usuario);
+                    }
                 }
                 return View(usuario);
             }

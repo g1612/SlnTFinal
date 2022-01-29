@@ -45,6 +45,7 @@
     <Compile Include="Documento.cs" />
     <Compile Include="EstadoPelicula.cs" />
     <Compile Include="Genero.cs" />
+    <Compile Include="MensajeRetorno.cs" />
     <Compile Include="Pago.cs" />
     <Compile Include="Pelicula.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
