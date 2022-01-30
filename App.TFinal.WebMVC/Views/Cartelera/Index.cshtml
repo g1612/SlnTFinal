@@ -1,0 +1,75 @@
+﻿@model IEnumerable<App.TFinal.Models.Cartelera>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPelicula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdSala)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HorarioInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HorarioFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdPelicula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdSala)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaFin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HorarioInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HorarioFin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

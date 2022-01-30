@@ -20,10 +20,19 @@ namespace App.TFinal.UnitOfWork
             //Productos = new ProductoRepository(connectionString);
             Usuarios = new UsuarioRepository(connectionString);
             Peliculas = new PeliculaRepository(connectionString);
+            Carteleras = new CarteleraRepository(connectionString);
             //Proveedores= new ProveedorRepository(connectionString);
             //Ventas = new VentaRepository(connectionString);
             //Logs = new LogRepository(connectionString);
         }
+
+        public ICarteleraRepository Carteleras
+        {
+            get;
+            private set;
+        }
+
+
         public IPeliculaRepository Peliculas
         {
             get;

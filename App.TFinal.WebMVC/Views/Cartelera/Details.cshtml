@@ -1,0 +1,82 @@
+﻿@model App.TFinal.Models.Cartelera
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cartelera</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPelicula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdPelicula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdSala)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdSala)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaFin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaFin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorarioInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HorarioFin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HorarioFin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

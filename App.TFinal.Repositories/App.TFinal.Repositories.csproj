@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICarteleraRepository.cs" />
     <Compile Include="IDocumentoRepository.cs" />
     <Compile Include="IGeneroRepository.cs" />
     <Compile Include="IPeliculaRepository.cs" />

@@ -164,6 +164,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CarteleraController.cs" />
     <Compile Include="Controllers\DocumentoController.cs" />
     <Compile Include="Controllers\GeneroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -2187,16 +2188,18 @@
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Usuario\Login2.cshtml" />
     <Content Include="Views\Usuario\Create.cshtml" />
-
     <Content Include="Views\Rol\_Create.cshtml" />
     <Content Include="Views\Rol\_List.cshtml" />
-
     <Content Include="Views\Pelicula\Index.cshtml" />
     <Content Include="Views\Pelicula\Details.cshtml" />
     <Content Include="Views\Pelicula\Create.cshtml" />
     <Content Include="Views\Pelicula\Edit.cshtml" />
     <Content Include="Views\Pelicula\Delete.cshtml" />
-
+    <Content Include="Views\Cartelera\Index.cshtml" />
+    <Content Include="Views\Cartelera\Details.cshtml" />
+    <Content Include="Views\Cartelera\Create.cshtml" />
+    <Content Include="Views\Cartelera\Edit.cshtml" />
+    <Content Include="Views\Cartelera\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

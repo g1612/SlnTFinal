@@ -15,6 +15,7 @@ namespace App.TFinal.UnitOfWork
         IRolRepository Rols { get; }
 
         IPeliculaRepository Peliculas { get; }
+        ICarteleraRepository Carteleras { get; }
 
         ISalaRepository Salas { get; }
         //IProductoRepository Productos { get; }
