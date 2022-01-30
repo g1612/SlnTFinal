@@ -13,6 +13,9 @@ namespace App.TFinal.UnitOfWork
         IDocumentoRepository Documentos { get; }
         IGeneroRepository Generos { get; }
         IRolRepository Rols { get; }
+
+        IPeliculaRepository Peliculas { get; }
+
         ISalaRepository Salas { get; }
         //IProductoRepository Productos { get; }
        IUsuarioRepository Usuarios { get; }
