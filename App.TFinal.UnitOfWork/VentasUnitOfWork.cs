@@ -19,11 +19,16 @@ namespace App.TFinal.UnitOfWork
             //Clientes = new ClienteRepository(connectionString);
             //Productos = new ProductoRepository(connectionString);
             Usuarios = new UsuarioRepository(connectionString);
+            Peliculas = new PeliculaRepository(connectionString);
             //Proveedores= new ProveedorRepository(connectionString);
             //Ventas = new VentaRepository(connectionString);
             //Logs = new LogRepository(connectionString);
         }
-
+        public IPeliculaRepository Peliculas
+        {
+            get;
+            private set;
+        }
 
         public IGeneroRepository Generos
         {

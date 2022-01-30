@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="DocumentoRepository.cs" />
     <Compile Include="GeneroRepository.cs" />
+    <Compile Include="PeliculaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="RolRepository.cs" />
