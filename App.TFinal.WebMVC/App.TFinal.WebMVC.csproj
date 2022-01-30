@@ -179,6 +179,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_JS\appVentas.js" />
+    <Content Include="App_JS\categoria.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -2043,12 +2045,16 @@
     <Content Include="Content\Templates\Default\vendor\fontawesome-free\webfonts\fa-solid-900.woff2" />
     <Content Include="Content\Templates\Default\vendor\jquery\jquery.min.map" />
     <Content Include="Content\Templates\Default\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="App_Code\Messages.cshtml" />
+    <Content Include="App_Code\Modal.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -2125,6 +2131,9 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Views\Rol\_Delete.cshtml" />
+    <Content Include="Views\Rol\_Details.cshtml" />
+    <Content Include="Views\Rol\_Edit.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2178,11 +2187,16 @@
     <Content Include="Views\Usuario\Login.cshtml" />
     <Content Include="Views\Usuario\Login2.cshtml" />
     <Content Include="Views\Usuario\Create.cshtml" />
+
+    <Content Include="Views\Rol\_Create.cshtml" />
+    <Content Include="Views\Rol\_List.cshtml" />
+
     <Content Include="Views\Pelicula\Index.cshtml" />
     <Content Include="Views\Pelicula\Details.cshtml" />
     <Content Include="Views\Pelicula\Create.cshtml" />
     <Content Include="Views\Pelicula\Edit.cshtml" />
     <Content Include="Views\Pelicula\Delete.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

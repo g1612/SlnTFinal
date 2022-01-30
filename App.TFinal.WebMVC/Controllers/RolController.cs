@@ -11,6 +11,8 @@ using System.Web;
 using System.Web.Mvc;
 namespace App.TFinal.WebMVC.Controllers
 {
+    //[ErrorActionFilter]
+    [RoutePrefix("Rol")]
     public class RolController : BaseController
     {
         public RolController(ILog log, IUnitOfWork unit) : base(log, unit)
@@ -18,6 +20,7 @@ namespace App.TFinal.WebMVC.Controllers
             //_unit = unit;
         }
         // GET: Usuario
+        [HttpGet]
         public async Task<ActionResult> Index()
         {
             var lista = await _unit.Rols.Listar();
@@ -25,15 +28,18 @@ namespace App.TFinal.WebMVC.Controllers
         }
 
         // GET: Rol/Details/5
+        [HttpGet]
         public async Task<ActionResult> Details(int id)
         {
-            return View(await _unit.Rols.Obtener(id));
+            //return View(await _unit.Rols.Obtener(id));
+            return PartialView("_Details", await _unit.Rols.Obtener(id));
         }
 
         // GET: Rol/Create
+        [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            return PartialView("_Create");
         }
 
         // POST: Rol/Create
@@ -57,9 +63,11 @@ namespace App.TFinal.WebMVC.Controllers
         }
 
         // GET: Rol/Edit/5
+        [HttpGet]
         public async Task<ActionResult> Edit(int id)
         {
-            return View(await _unit.Rols.Obtener(id));
+            //return View(await _unit.Rols.Obtener(id));
+            return PartialView("_Edit", await _unit.Rols.Obtener(id));
         }
 
         // POST: Rol/Edit/5
@@ -80,11 +88,12 @@ namespace App.TFinal.WebMVC.Controllers
                 return View();
             }
         }
-
+        [HttpGet]
         // GET: Rol/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            return View();
+            //return View(await _unit.Rols.Obtener(id));
+            return PartialView("_Delete", await _unit.Rols.Obtener(id));
         }
 
         // POST: Rol/Delete/5
