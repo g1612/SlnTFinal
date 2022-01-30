@@ -1,33 +1,19 @@
-﻿@model App.TFinal.Models.Rol
+﻿@model App.TFinal.Models.Genero
 
-@using (Ajax.BeginForm("Create", new
-{
-    Controller = "Rol"
-},
-    new AjaxOptions
-    {
-        HttpMethod = "POST",
-        InsertionMode = InsertionMode.Replace,
-        UpdateTargetId = "modal-body",
-        OnSuccess = "categoria.success('create');"
-    },
-    htmlAttributes: new
-    {
-        id = "createForm"
-    }
-    ))
+
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
-        @*<h4>Rol</h4>*@
-        @*<hr />*@
+        <h4>Genero</h4>
+        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.CRol, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CGenero, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CRol, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CRol, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.CGenero, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CGenero, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -51,16 +37,16 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
 
-@*Unobtrusive*@
-@*<script type="text/javascript">
-        $(function () {
-            $.validator.unobtrusive.parse("#createForm")
-        })
-    </script>*@
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
