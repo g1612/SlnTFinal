@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,7 +18,13 @@
 
     <!-- Custom styles for this template-->
     <link href="~/Content/Templates/Default/css/sb-admin-2.min.css" rel="stylesheet">
-    
+    <!-- Bootstrap core JavaScript-->
+    @*@Scripts.Render("~/bundles/jquery")*@
+    <script src="~/Content/templates/default/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/templates/default/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!--Unobtrusive-->
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 </head>
 
 <body id="page-top">
@@ -87,15 +93,17 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="~/Content/Templates/Default/vendor/jquery/jquery.min.js"></script>
-    <script src="~/Content/Templates/Default/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
 
     <!-- Core plugin JavaScript-->
     <script src="~/Content/Templates/Default/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="~/Content/Templates/Default/js/sb-admin-2.min.js"></script>
+
+    <!-- Sweet Alert-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     @RenderSection("scripts", required: false)
 
