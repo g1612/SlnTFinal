@@ -1,4 +1,4 @@
-﻿@model App.TFinal.Models.Rol
+﻿@model App.TFinal.Models.Documento
 
 @{
     ViewBag.Title = "Delete";
@@ -7,14 +7,15 @@
 
 <h3>Esta seguro de eliminar el registro?</h3>
 <div>
+
     
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.CRol)
+            @Html.DisplayNameFor(model => model.CDocumento)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CRol)
+            @Html.DisplayFor(model => model.CDocumento)
         </dd>
 
         <dt>
@@ -37,20 +38,20 @@
 
     @using (Ajax.BeginForm("Delete", new
     {
-        Controller = "Rol"
+        Controller = "Documento"
     },
-     new AjaxOptions
-     {
-         HttpMethod = "POST",
-         InsertionMode = InsertionMode.Replace,
-         UpdateTargetId = "modal-body",
-         OnSuccess = "categoria.success('delete');"
-     },
-     htmlAttributes: new
-     {
-         id = "deleteForm"
-     }
-     ))
+       new AjaxOptions
+       {
+           HttpMethod = "POST",
+           InsertionMode = InsertionMode.Replace,
+           UpdateTargetId = "modal-body",
+           OnSuccess = "categoria.success('delete');"
+       },
+       htmlAttributes: new
+       {
+           id = "deleteForm"
+       }
+       ))
     {
         @Html.AntiForgeryToken()
 
