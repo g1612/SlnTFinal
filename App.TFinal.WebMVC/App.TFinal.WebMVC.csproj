@@ -182,6 +182,7 @@
   <ItemGroup>
     <Content Include="App_JS\appVentas.js" />
     <Content Include="App_JS\categoria.js" />
+    <Content Include="App_JS\pelicula.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -2195,13 +2196,11 @@
     <Content Include="Views\Pelicula\Create.cshtml" />
     <Content Include="Views\Pelicula\Edit.cshtml" />
     <Content Include="Views\Pelicula\Delete.cshtml" />
-
     <Content Include="Views\Cartelera\Index.cshtml" />
     <Content Include="Views\Cartelera\Details.cshtml" />
     <Content Include="Views\Cartelera\Create.cshtml" />
     <Content Include="Views\Cartelera\Edit.cshtml" />
     <Content Include="Views\Cartelera\Delete.cshtml" />
-
     <Content Include="Views\Sala\_Create.cshtml" />
     <Content Include="Views\Sala\_List.cshtml" />
     <Content Include="Views\Sala\_Edit.cshtml" />
@@ -2217,7 +2216,11 @@
     <Content Include="Views\Documento\_Delete.cshtml" />
     <Content Include="Views\Documento\_Edit.cshtml" />
     <Content Include="Views\Documento\_Details.cshtml" />
-
+    <Content Include="Views\Pelicula\_List.cshtml" />
+    <Content Include="Views\Pelicula\_Create.cshtml" />
+    <Content Include="Views\Pelicula\_Edit.cshtml" />
+    <Content Include="Views\Pelicula\_Delete.cshtml" />
+    <Content Include="Views\Pelicula\_Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

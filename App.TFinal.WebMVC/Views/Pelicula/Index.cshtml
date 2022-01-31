@@ -1,63 +1,32 @@
 ﻿@model IEnumerable<App.TFinal.Models.Pelicula>
 
-@{
-    ViewBag.Title = "Index";
-}
+@*@{
+        ViewBag.Title = "Index";
+    }*@
 
-<h2>Index</h2>
+<h2>Mantenimiento de Pelicula</h2>
+@Messages.Message("createMessage", "Nuevo", "success", "El registro se creó satisfactoriamente")
+@Messages.Message("deleteMessage", "Eliminar", "danger", "El registro se eliminó satisfactoriamente")
+@Messages.Message("editMessage", "Editar", "primary", "El registro se editó satisfactoriamente")
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="#" onclick="appVentas.getModal('@Url.Action("Create")');" data-toggle="modal"
+       data-target="#modal-container" class="btn btn-success">
+        <span class="fa fa-plus"></span> Crear Pelicula
+    </a>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.IdGenero)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdEstadoPelicula)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Titulo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Duracion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sipnosis)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdGenero)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdEstadoPelicula)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Titulo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Duracion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sipnosis)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
 
-</table>
+
+
+@Html.Partial("_List")
+
+@Modal.GetModal("Mantenimiento de Pelicula")
+
+<!--Data Table-->
+<script src="~/Content/templates/default/vendor/datatables/jquery.dataTables.js"></script>
+<script src="~/Content/templates/default/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+
+<script src="~/App_JS/appVentas.js" type="text/javascript"></script>
+<script src="~/App_JS/pelicula.js" type="text/javascript"></script>
