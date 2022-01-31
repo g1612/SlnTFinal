@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarteleraRepository.cs" />
     <Compile Include="DocumentoRepository.cs" />
     <Compile Include="GeneroRepository.cs" />
     <Compile Include="PeliculaRepository.cs" />
