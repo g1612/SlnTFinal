@@ -1,20 +1,21 @@
-﻿@model App.TFinal.Models.Rol
+﻿@model App.TFinal.Models.Genero
 
 @{
-    ViewBag.Title = "Detalle de Rol";
+    ViewBag.Title = "Detalle de Genero";
 }
 
 
+
 <div>
-    <h4>Detalle del Rol</h4>
+    <h4>Detalle del Genero</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.CRol)
+            @Html.DisplayNameFor(model => model.CGenero)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CRol)
+            @Html.DisplayFor(model => model.CGenero)
         </dd>
 
         <dt>
@@ -35,6 +36,6 @@
 
     </dl>
 </div>
-@*<p>
+<@*p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) 
 </p>*@

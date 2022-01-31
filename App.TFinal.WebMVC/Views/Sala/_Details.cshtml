@@ -1,13 +1,13 @@
 ﻿@model App.TFinal.Models.Sala
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalle de Sala";
 }
 
-<h2>Details</h2>
+
 
 <div>
-    <h4>Sala</h4>
+    <h4>Detalle de Sala</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -45,6 +45,10 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <!--@Html.ActionLink("Back to List", "Index")-->
+    @*   @Html.ActionLink("Edit", "Edit", new { id = Model.Id })*@
+    <!--<a href="#" onclick="appVentas.getModal('@Url.Action("Edit", new { id=Model.Id })');" data-toggle="modal"
+       data-target="#modal-container" class="btn btn-warning">
+        <span class="fa fa-edit"></span> Editar
+    </a>-->
 </p>

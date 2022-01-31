@@ -1,18 +1,18 @@
-﻿@model IEnumerable<App.TFinal.Models.Genero>
+﻿@model IEnumerable<App.TFinal.Models.Documento>
 
     <div class="table-responsive">
         <table id="categoriaTable" class="table table-striped table-hover table-bordered">
             <thead>
                 <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CGenero)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Descripcion)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Estado)
-                    </th>
+                   <th>
+            @Html.DisplayNameFor(model => model.CDocumento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
                     <th>
                         Acciones
                     </th>
@@ -23,7 +23,7 @@
                 {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.CGenero)
+                        @Html.DisplayFor(modelItem => item.CDocumento)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Descripcion)
@@ -59,14 +59,14 @@
             <tfoot>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.CGenero)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Descripcion)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Estado)
-                    </th>
+            @Html.DisplayNameFor(model => model.CDocumento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
                     <th>
                         Acciones
                     </th>
