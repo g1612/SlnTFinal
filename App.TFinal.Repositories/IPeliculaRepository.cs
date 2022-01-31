@@ -18,6 +18,7 @@ namespace App.TFinal.Repositories
 
         Task<MensajeRetorno> CrearPelicula(Pelicula pelicula);
 
+        Task<IEnumerable<Pelicula>> ListarPeliculas();
 
     }
     //coment

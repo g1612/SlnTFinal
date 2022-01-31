@@ -21,21 +21,24 @@ namespace App.TFinal.WebMVC.Controllers
         // GET: Pelicula
         public async Task<ActionResult> Index()
         {
-            var lista = await _unit.Peliculas.Listar();
+            var lista = await _unit.Peliculas.ListarPeliculas();
             return View(lista);
         }
 
         // GET: Pelicula/Details/5
         public async Task<ActionResult> Details(int id)
         {
-            return View(await _unit.Peliculas.Obtener(id));
+            //return View(await _unit.Peliculas.Obtener(id));
+            return PartialView("_Details", await _unit.Peliculas.Obtener(id));
+
         }
 
         // GET: Pelicula/Create
         public ActionResult Create()
         {
-            return View();
+            return PartialView("_Create");
         }
+
 
         // POST: Pelicula/Create
         [HttpPost]
@@ -67,7 +70,8 @@ namespace App.TFinal.WebMVC.Controllers
         // GET: Pelicula/Edit/5
         public async Task<ActionResult> Edit(int id)
         {
-            return View(await _unit.Peliculas.Obtener(id));
+            //    return View(await _unit.Peliculas.Obtener(id));
+            return PartialView("_Edit", await _unit.Peliculas.Obtener(id));
         }
 
         // POST: Pelicula/Edit/5
@@ -90,9 +94,9 @@ namespace App.TFinal.WebMVC.Controllers
         }
 
         // GET: Pelicula/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            return View();
+            return PartialView("_Delete", await _unit.Peliculas.Obtener(id));
         }
 
         // POST: Pelicula/Delete/5

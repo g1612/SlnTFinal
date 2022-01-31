@@ -81,5 +81,17 @@ namespace App.TFinal.Repositories.Dapper
         }
 
 
+        public async Task<IEnumerable<Pelicula>> ListarPeliculas()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+             
+
+                return await connection.QueryAsync<Pelicula>("uspListarPeliculas", commandType: System.Data.CommandType.StoredProcedure );
+
+            }
+        }
+
+
     }
 }
