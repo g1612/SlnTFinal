@@ -2195,11 +2195,29 @@
     <Content Include="Views\Pelicula\Create.cshtml" />
     <Content Include="Views\Pelicula\Edit.cshtml" />
     <Content Include="Views\Pelicula\Delete.cshtml" />
+
     <Content Include="Views\Cartelera\Index.cshtml" />
     <Content Include="Views\Cartelera\Details.cshtml" />
     <Content Include="Views\Cartelera\Create.cshtml" />
     <Content Include="Views\Cartelera\Edit.cshtml" />
     <Content Include="Views\Cartelera\Delete.cshtml" />
+
+    <Content Include="Views\Sala\_Create.cshtml" />
+    <Content Include="Views\Sala\_List.cshtml" />
+    <Content Include="Views\Sala\_Edit.cshtml" />
+    <Content Include="Views\Sala\_Details.cshtml" />
+    <Content Include="Views\Sala\_Delete.cshtml" />
+    <Content Include="Views\Genero\_List.cshtml" />
+    <Content Include="Views\Genero\_Create.cshtml" />
+    <Content Include="Views\Genero\_Delete.cshtml" />
+    <Content Include="Views\Genero\_Edit.cshtml" />
+    <Content Include="Views\Genero\_Details.cshtml" />
+    <Content Include="Views\Documento\_List.cshtml" />
+    <Content Include="Views\Documento\_Create.cshtml" />
+    <Content Include="Views\Documento\_Delete.cshtml" />
+    <Content Include="Views\Documento\_Edit.cshtml" />
+    <Content Include="Views\Documento\_Details.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
