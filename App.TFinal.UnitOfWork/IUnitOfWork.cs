@@ -20,6 +20,8 @@ namespace App.TFinal.UnitOfWork
         ISalaRepository Salas { get; }
         //IProductoRepository Productos { get; }
        IUsuarioRepository Usuarios { get; }
+
+        IPagoRepository Pagos { get; }
         //IProveedorRepository Proveedores { get; }
         //ILogRepository Logs { get; }
     }

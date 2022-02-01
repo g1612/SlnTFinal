@@ -168,6 +168,7 @@
     <Compile Include="Controllers\DocumentoController.cs" />
     <Compile Include="Controllers\GeneroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PagoController.cs" />
     <Compile Include="Controllers\PeliculaController.cs" />
     <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Controllers\SalaController.cs" />
@@ -183,6 +184,7 @@
     <Content Include="App_JS\appVentas.js" />
     <Content Include="App_JS\cartelera.js" />
     <Content Include="App_JS\categoria.js" />
+    <Content Include="App_JS\pago.js" />
     <Content Include="App_JS\pelicula.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -2227,6 +2229,8 @@
     <Content Include="Views\Cartelera\_Edit.cshtml" />
     <Content Include="Views\Cartelera\_Delete.cshtml" />
     <Content Include="Views\Cartelera\_Details.cshtml" />
+    <Content Include="Views\Pago\Index.cshtml" />
+    <Content Include="Views\Pago\_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

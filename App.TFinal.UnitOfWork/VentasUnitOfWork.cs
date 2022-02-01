@@ -21,9 +21,16 @@ namespace App.TFinal.UnitOfWork
             Usuarios = new UsuarioRepository(connectionString);
             Peliculas = new PeliculaRepository(connectionString);
             Carteleras = new CarteleraRepository(connectionString);
+            Pagos = new PagoRepository(connectionString);
             //Proveedores= new ProveedorRepository(connectionString);
             //Ventas = new VentaRepository(connectionString);
             //Logs = new LogRepository(connectionString);
+        }
+
+        public IPagoRepository Pagos
+        {
+            get;
+            private set;
         }
 
         public ICarteleraRepository Carteleras
