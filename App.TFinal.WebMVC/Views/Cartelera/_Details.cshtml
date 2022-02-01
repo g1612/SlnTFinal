@@ -1,12 +1,10 @@
 ﻿@model App.TFinal.Models.Cartelera
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Detalle de Cartelera";
 }
 
-<h2>Delete</h2>
 
-<h3>¿Seguro que desea eliminar el registro?</h3>
 <div>
     <h4>Cartelera</h4>
     <hr />
@@ -76,13 +74,8 @@
         </dd>
 
     </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
 </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

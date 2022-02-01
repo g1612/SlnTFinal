@@ -20,6 +20,8 @@ namespace App.TFinal.Repositories
 
         Task<MensajeRetorno> CrearCartelera(Cartelera pelicula);
 
+        Task<IEnumerable<Cartelera>> ListarCarteleras();
+
 
 
 

@@ -11,32 +11,34 @@ using System.Threading.Tasks;
 namespace App.TFinal.Repositories.Dapper
 {
 
+
     //   public class PeliculaRepository : Repository<Pelicula>, IPeliculaRepository
-    public class CarteleraRepository : Repository<Cartelera>, ICarteleraRepository
+    public class PagoRepository : Repository<Pago>, IPagoRepository
     {
 
-        public CarteleraRepository(string connectionString) : base(connectionString)
+
+        public PagoRepository(string connectionString) : base(connectionString)
         {
 
 
         }
 
-        public Cartelera BuscarPorId(int id)
+        public Pago BuscarPorId(int id)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
-                return connection.GetAll<Cartelera>().Where(c => c.Id.Equals(id)).First();
+                return connection.GetAll<Pago>().Where(c => c.Id.Equals(id)).First();
             }
         }
 
 
-        public async Task<IEnumerable<Cartelera>> Listar(string titulo)
+        public async Task<IEnumerable<Pago>> Listar(string titulo)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 var parameters = new DynamicParameters();
                 parameters.Add("@Titulo", titulo);
-                return await connection.QueryAsync<Cartelera>("select Id , IdGenero, IdEstadoPelicula, Titulo , Duracion , Sipnosis ,Estado from dbo.Pelicula " +
+                return await connection.QueryAsync<Pago>("select Id , IdGenero, IdEstadoPelicula, Titulo , Duracion , Sipnosis ,Estado from dbo.Pelicula " +
                                                         "where Titulo like '%@Titulo%'", parameters,
                                                         commandType: System.Data.CommandType.Text);
             }
@@ -47,7 +49,7 @@ namespace App.TFinal.Repositories.Dapper
             {
                 var parameters = new DynamicParameters();
                 parameters.Add("@id", id);
-                return await connection.ExecuteAsync("update dbo.Cartelera " +
+                return await connection.ExecuteAsync("update dbo.Pelicula " +
                                                 "set Estado = 0 " +
                                                 "where Id = @id", parameters,
                                                 commandType: System.Data.CommandType.Text);
@@ -55,50 +57,44 @@ namespace App.TFinal.Repositories.Dapper
         }
 
 
-        public async Task<MensajeRetorno> CrearCartelera(Cartelera cartelera)
+        public async Task<MensajeRetorno> RegistrarPago(Pago pago)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 string message = "";
                 var parameters = new DynamicParameters();
-                parameters.Add("@IdPelicula", cartelera.IdPelicula);
-                parameters.Add("@IdSala", cartelera.IdSala);
-                parameters.Add("@FechaInicio", cartelera.FechaInicio);
-                parameters.Add("@FechaFin", cartelera.FechaFin);
-                parameters.Add("@HorarioInicio", cartelera.HorarioInicio);
-                parameters.Add("@HorarioFin", cartelera.HorarioFin);
-                parameters.Add("@Precio", cartelera.Precio);
-                parameters.Add("@Estado", cartelera.Estado);
-
+                parameters.Add("@IdUsuario", pago.IdUsuario);
+                parameters.Add("@IdCartelera", pago.IdCartelera);
+                parameters.Add("@Cantidad", pago.Cantidad);
+                parameters.Add("@Total", pago.Total);
+         
                 parameters.Add("OV_message_error", message, System.Data.DbType.String,
                     System.Data.ParameterDirection.Output);
 
-                var carteleraCreada = await connection.QueryFirstOrDefaultAsync<Cartelera>("dbo.uspCrearCartelera",
+                var pagoRegistrado = await connection.QueryFirstOrDefaultAsync<Pago>("dbo.uspRegistrarPago",
                     parameters, commandType: System.Data.CommandType.StoredProcedure);
 
                 message = parameters.Get<string>("@OV_message_error");
 
                 //return usuarioCreado;
-                return new MensajeRetorno { Objeto = carteleraCreada, Mensaje = message };
+                return new MensajeRetorno { Objeto = pagoRegistrado, Mensaje = message };
             }
         }
 
 
-
-        public async Task<IEnumerable<Cartelera>> ListarCarteleras()
+        public async Task<IEnumerable<Pago>> ListaPagos()
         {
             using (var connection = new SqlConnection(_connectionString))
             {
 
 
-                return await connection.QueryAsync<Cartelera>("uspListarCarteleras", commandType: System.Data.CommandType.StoredProcedure);
+                return await connection.QueryAsync<Pago>("uspListaPagos", commandType: System.Data.CommandType.StoredProcedure);
 
             }
         }
 
 
     }
-
 
 
 }
