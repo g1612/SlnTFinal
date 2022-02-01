@@ -1,75 +1,32 @@
 ﻿@model IEnumerable<App.TFinal.Models.Cartelera>
 
-@{
-    ViewBag.Title = "Index";
-}
+@*@{
+        ViewBag.Title = "Index";
+    }*@
 
-<h2>Index</h2>
+<h2>Mantenimiento de Cartelera</h2>
+@Messages.Message("createMessage", "Nuevo", "success", "El registro se creó satisfactoriamente")
+@Messages.Message("deleteMessage", "Eliminar", "danger", "El registro se eliminó satisfactoriamente")
+@Messages.Message("editMessage", "Editar", "primary", "El registro se editó satisfactoriamente")
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="#" onclick="appVentas.getModal('@Url.Action("Create")');" data-toggle="modal"
+       data-target="#modal-container" class="btn btn-success">
+        <span class="fa fa-plus"></span> Crear Cartelera
+    </a>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.IdPelicula)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdSala)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaInicio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaFin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HorarioInicio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HorarioFin)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Precio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdPelicula)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdSala)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaFin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HorarioInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HorarioFin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Precio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
 
-</table>
+
+
+@Html.Partial("_List")
+
+@Modal.GetModal("Mantenimiento de Cartelera")
+
+<!--Data Table-->
+<script src="~/Content/templates/default/vendor/datatables/jquery.dataTables.js"></script>
+<script src="~/Content/templates/default/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+
+<script src="~/App_JS/appVentas.js" type="text/javascript"></script>
+<script src="~/App_JS/cartelera.js" type="text/javascript"></script>

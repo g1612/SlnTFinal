@@ -84,6 +84,19 @@ namespace App.TFinal.Repositories.Dapper
         }
 
 
+
+        public async Task<IEnumerable<Cartelera>> ListarCarteleras()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+
+
+                return await connection.QueryAsync<Cartelera>("uspListarCarteleras", commandType: System.Data.CommandType.StoredProcedure);
+
+            }
+        }
+
+
     }
 
 

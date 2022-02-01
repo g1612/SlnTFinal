@@ -1,0 +1,122 @@
+﻿@model IEnumerable<App.TFinal.Models.Cartelera>
+
+<div class="table-responsive">
+
+
+    <table id="carteleraTable" class="table table-striped table-hover table-bordered">
+
+        <thead>
+
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.titulopelicula)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nombresala)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaInicio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaFin)
+                </th>
+                <th data-toggle="tooltip" title="Hora de inicio de pelicula" data-placement="right">
+                    @Html.DisplayNameFor(model => model.HorarioInicio)
+                </th>
+                <th data-toggle="tooltip" title="Hora de finalizacion de pelicula" data-placement="right">
+                    @Html.DisplayNameFor(model => model.HorarioFin)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.titulopelicula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombresala)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaFin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HorarioInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HorarioFin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td>
+                        <a href="#" onclick="appVentas.getModal('@Url.Action("Edit", new { id=item.Id })');" data-toggle="modal"
+                           data-target="#modal-container" class="btn btn-warning">
+                            <span class="fa fa-edit"></span> Editar
+                        </a>
+
+                        <a href="#" onclick="appVentas.getModal('@Url.Action("Details", new { id=item.Id })');" data-toggle="modal"
+                           data-target="#modal-container" class="btn btn-primary">
+                            <span class="fa fa-search"></span> Ver
+                        </a>
+                        <a href="#" onclick="appVentas.getModal('@Url.Action("Delete", new { id=item.Id })');" data-toggle="modal"
+                           data-target="#modal-container" class="btn btn-danger">
+                            <span class="fa fa-trash"></span> Eliminar
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.titulopelicula)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.nombresala)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaInicio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaFin)
+                </th>
+                <th data-toggle="tooltip" title="Hora de inicio de pelicula" data-placement="right">
+                    @Html.DisplayNameFor(model => model.HorarioInicio)
+                </th>
+                <th data-toggle="tooltip" title="Hora de finalizacion de pelicula" data-placement="right">
+                    @Html.DisplayNameFor(model => model.HorarioFin)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th></th>
+            </tr>
+        </tfoot>
+
+    </table>
+
+</div>
