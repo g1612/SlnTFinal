@@ -166,6 +166,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CarteleraController.cs" />
     <Compile Include="Controllers\DocumentoController.cs" />
+    <Compile Include="Controllers\EstadoPeliculaController.cs" />
     <Compile Include="Controllers\GeneroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PagoController.cs" />
@@ -2231,6 +2232,16 @@
     <Content Include="Views\Cartelera\_Details.cshtml" />
     <Content Include="Views\Pago\Index.cshtml" />
     <Content Include="Views\Pago\_List.cshtml" />
+    <Content Include="Views\EstadoPelicula\Index.cshtml" />
+    <Content Include="Views\EstadoPelicula\Details.cshtml" />
+    <Content Include="Views\EstadoPelicula\Create.cshtml" />
+    <Content Include="Views\EstadoPelicula\Edit.cshtml" />
+    <Content Include="Views\EstadoPelicula\Delete.cshtml" />
+    <Content Include="Views\EstadoPelicula\_Create.cshtml" />
+    <Content Include="Views\EstadoPelicula\_List.cshtml" />
+    <Content Include="Views\EstadoPelicula\_Delete.cshtml" />
+    <Content Include="Views\EstadoPelicula\_Details.cshtml" />
+    <Content Include="Views\EstadoPelicula\_Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

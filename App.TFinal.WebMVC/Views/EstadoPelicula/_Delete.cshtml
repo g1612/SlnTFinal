@@ -1,0 +1,55 @@
+﻿@model App.TFinal.Models.EstadoPelicula
+
+@*@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>*@
+
+<h3>Esta seguro de eliminar el registro?</h3>
+<div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+    </dl>
+
+    @using (Ajax.BeginForm("Delete", new
+    {
+        Controller = "EstadoPelicula"
+    },
+        new AjaxOptions
+        {
+            HttpMethod = "POST",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "modal-body",
+            OnSuccess = "categoria.success('delete');"
+        },
+        htmlAttributes: new
+        {
+            id = "deleteForm"
+        }
+        ))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-info" /> 
+            @*@Html.ActionLink("Back to List", "Index")*@
+        </div>
+    }
+</div>
