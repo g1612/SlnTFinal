@@ -9,7 +9,7 @@ namespace App.TFinal.UnitOfWork
 {
     public interface IUnitOfWork
     {
-        //ICategoriaRepository Categorias { get; }
+        IEstadoPeliculaRepository EstadoPeliculas { get; }
         IDocumentoRepository Documentos { get; }
         IGeneroRepository Generos { get; }
         IRolRepository Rols { get; }

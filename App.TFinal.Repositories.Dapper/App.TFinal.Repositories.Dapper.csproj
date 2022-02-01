@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="CarteleraRepository.cs" />
     <Compile Include="DocumentoRepository.cs" />
+    <Compile Include="EstadoPeliculaRepository.cs" />
     <Compile Include="GeneroRepository.cs" />
     <Compile Include="PagoRepository.cs" />
     <Compile Include="PeliculaRepository.cs" />

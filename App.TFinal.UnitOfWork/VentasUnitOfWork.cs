@@ -16,7 +16,7 @@ namespace App.TFinal.UnitOfWork
             Documentos = new DocumentoRepository(connectionString);
             Salas = new SalaRepository(connectionString);
             Rols = new RolRepository(connectionString);
-            //Clientes = new ClienteRepository(connectionString);
+            EstadoPeliculas = new EstadoPeliculaRepository(connectionString);
             //Productos = new ProductoRepository(connectionString);
             Usuarios = new UsuarioRepository(connectionString);
             Peliculas = new PeliculaRepository(connectionString);
@@ -66,11 +66,13 @@ namespace App.TFinal.UnitOfWork
             get;
             private set;
         }
-        //public IClienteRepository Clientes
-        //{
-        //    get;
-        //    private set;
-        //}
+
+        
+        public IEstadoPeliculaRepository EstadoPeliculas
+        {
+            get;
+            private set;
+        }
         //public IProductoRepository Productos
         //{
         //    get;
