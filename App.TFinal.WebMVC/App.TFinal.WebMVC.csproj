@@ -181,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_JS\appVentas.js" />
+    <Content Include="App_JS\cartelera.js" />
     <Content Include="App_JS\categoria.js" />
     <Content Include="App_JS\pelicula.js" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -2221,6 +2222,11 @@
     <Content Include="Views\Pelicula\_Edit.cshtml" />
     <Content Include="Views\Pelicula\_Delete.cshtml" />
     <Content Include="Views\Pelicula\_Details.cshtml" />
+    <Content Include="Views\Cartelera\_List.cshtml" />
+    <Content Include="Views\Cartelera\_Create.cshtml" />
+    <Content Include="Views\Cartelera\_Edit.cshtml" />
+    <Content Include="Views\Cartelera\_Delete.cshtml" />
+    <Content Include="Views\Cartelera\_Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

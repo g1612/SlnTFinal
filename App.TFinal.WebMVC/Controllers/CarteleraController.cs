@@ -24,20 +24,23 @@ namespace App.TFinal.WebMVC.Controllers
 
         public async Task<ActionResult> Index()
         {
-            var lista = await _unit.Carteleras.Listar();
+            var lista = await _unit.Carteleras.ListarCarteleras();
             return View(lista);
         }
 
         // GET: Pelicula/Details/5
         public async Task<ActionResult> Details(int id)
         {
-            return View(await _unit.Carteleras.Obtener(id));
+            //return View(await _unit.Peliculas.Obtener(id));
+            return PartialView("_Details", await _unit.Carteleras.Obtener(id));
+
         }
+
 
         // GET: Cartelera/Create
         public ActionResult Create()
         {
-            return View();
+            return PartialView("_Create");
         }
 
         // POST: Cartelera/Create
@@ -71,7 +74,8 @@ namespace App.TFinal.WebMVC.Controllers
         // GET: Cartelera/Edit/5
         public async Task<ActionResult> Edit(int id)
         {
-            return View(await _unit.Carteleras.Obtener(id));
+            //    return View(await _unit.Peliculas.Obtener(id));
+            return PartialView("_Edit", await _unit.Carteleras.Obtener(id));
         }
 
         // POST: Pelicula/Edit/5
@@ -95,9 +99,9 @@ namespace App.TFinal.WebMVC.Controllers
 
 
         // GET: Cartelera/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            return View();
+            return PartialView("_Delete", await _unit.Carteleras.Obtener(id));
         }
 
         // POST: Cartelera/Delete/5
