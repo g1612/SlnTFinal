@@ -2242,6 +2242,8 @@
     <Content Include="Views\EstadoPelicula\_Delete.cshtml" />
     <Content Include="Views\EstadoPelicula\_Details.cshtml" />
     <Content Include="Views\EstadoPelicula\_Edit.cshtml" />
+    <Content Include="Views\Pelicula\_Pag1.cshtml" />
+    <Content Include="Views\Home\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

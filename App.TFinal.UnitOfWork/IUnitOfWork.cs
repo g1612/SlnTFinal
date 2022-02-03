@@ -22,7 +22,7 @@ namespace App.TFinal.UnitOfWork
        IUsuarioRepository Usuarios { get; }
 
         IPagoRepository Pagos { get; }
-        //IProveedorRepository Proveedores { get; }
+        IListaPeliculaRepository ListaPeliculas        {            get;        }
         //ILogRepository Logs { get; }
     }
 }

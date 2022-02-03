@@ -22,9 +22,15 @@ namespace App.TFinal.UnitOfWork
             Peliculas = new PeliculaRepository(connectionString);
             Carteleras = new CarteleraRepository(connectionString);
             Pagos = new PagoRepository(connectionString);
-            //Proveedores= new ProveedorRepository(connectionString);
+            ListaPeliculas= new ListaPeliculaRepository(connectionString);
             //Ventas = new VentaRepository(connectionString);
             //Logs = new LogRepository(connectionString);
+        }
+
+        public IListaPeliculaRepository ListaPeliculas
+        {
+            get;
+            private set;
         }
 
         public IPagoRepository Pagos

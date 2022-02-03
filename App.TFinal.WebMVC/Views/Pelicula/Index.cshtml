@@ -19,7 +19,12 @@
 
 
 
-@Html.Partial("_List")
+@Html.Partial("_Pag1")
+
+<div id="peliculaList">
+    @Html.Partial("_List")
+</div>
+
 
 @Modal.GetModal("Mantenimiento de Pelicula")
 

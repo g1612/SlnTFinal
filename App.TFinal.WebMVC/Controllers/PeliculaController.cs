@@ -21,8 +21,18 @@ namespace App.TFinal.WebMVC.Controllers
         // GET: Pelicula
         public async Task<ActionResult> Index()
         {
-            var lista = await _unit.Peliculas.ListarPeliculas();
-            return View(lista);
+            //var lista = await _unit.Peliculas.ListarPeliculas();
+            //return View(lista);
+
+            var lstTipoCategoria = await _unit.Peliculas.ListarPeliculas();
+            ViewBag.ListaPeliculas = lstTipoCategoria;
+
+            ViewData["ListaPeliculas"] = lstTipoCategoria;
+            //ViewData.Add("TipoCategorias", lstTipoCategoria);
+
+            var lstCategorias = await _unit.Peliculas.Listar();
+            return View(lstCategorias);
+
         }
 
         // GET: Pelicula/Details/5
