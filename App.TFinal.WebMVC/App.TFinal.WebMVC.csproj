@@ -169,6 +169,7 @@
     <Compile Include="Controllers\EstadoPeliculaController.cs" />
     <Compile Include="Controllers\GeneroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListaPeliculaController.cs" />
     <Compile Include="Controllers\PagoController.cs" />
     <Compile Include="Controllers\PeliculaController.cs" />
     <Compile Include="Controllers\RolController.cs" />
@@ -2244,6 +2245,8 @@
     <Content Include="Views\EstadoPelicula\_Edit.cshtml" />
     <Content Include="Views\Pelicula\_Pag1.cshtml" />
     <Content Include="Views\Home\View.cshtml" />
+    <Content Include="Views\Pelicula\Index2.cshtml" />
+    <Content Include="Views\ListaPelicula\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

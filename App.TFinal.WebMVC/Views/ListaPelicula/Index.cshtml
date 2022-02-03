@@ -1,0 +1,120 @@
+﻿@model IEnumerable<App.TFinal.Models.ListaPelicula>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        @*<tr>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sipnosis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nombregenero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duracion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcionestpel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdGenero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdEstadoPelicula)
+            </th>
+            <th></th>
+        </tr>*@
+        @foreach (var item in ViewData["ListaPeliculas"] as IEnumerable<App.TFinal.Models.ListaPelicula>)
+        {
+
+            <td>
+            <tr>
+                @Html.DisplayName( @item.Titulo)
+            </tr>
+            @* <tr>
+                 @Html.DisplayFor(modelItem => item.nombregenero)
+             </tr>
+             <tr>
+                 @Html.DisplayFor(modelItem => item.descripcionestpel)
+             </tr>
+             <tr>
+                 @Html.DisplayFor(modelItem => item.IdEstadoPelicula)
+             </tr>
+             <tr>
+                 @Html.DisplayFor(modelItem => item.Titulo)
+             </tr>
+             <tr>
+                 @Html.DisplayFor(modelItem => item.Duracion)
+             </tr>
+             <tr>
+                 @Html.DisplayFor(modelItem => item.Sipnosis)
+             </tr>
+             <tr>
+                 @Html.DisplayFor(modelItem => item.Estado)
+             </tr>-->
+            <td>
+                 @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                 @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                 @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+             </td*@<!-->-->
+            </td>
+        }
+
+        @* @foreach (var item in Model)
+        {
+            <td>
+            <tr>
+                @Html.DisplayFor(modelItem => item.IdGenero)
+            </tr>
+            <tr>
+                @Html.DisplayFor(modelItem => item.nombregenero)
+            </tr>
+            <tr>
+                @Html.DisplayFor(modelItem => item.descripcionestpel)
+            </tr>
+            <tr>
+                @Html.DisplayFor(modelItem => item.IdEstadoPelicula)
+            </tr>
+            <tr>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </tr>
+            <tr>
+                @Html.DisplayFor(modelItem => item.Duracion)
+            </tr>
+            <tr>
+                @Html.DisplayFor(modelItem => item.Sipnosis)
+            </tr>
+            <tr>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </tr>-->
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td
+        <!-->
+            </td>
+        }*@
+
+    </table>
+    </body>
+    </html>
