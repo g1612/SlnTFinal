@@ -1,0 +1,61 @@
+﻿<form>
+    <div class="row">
+        <div class="form-group col-sm-4">
+            <label>Código:</label>
+            <input id="categoriaId" type="text" class="form-control" placeholder="Código Categoría" />
+        </div>
+        <div class="form-group col-sm-4">
+            <label>Nombre:</label>
+            <input id="categoriaName" type="text" class="form-control" placeholder="Nombre Categoría" />
+        </div>
+        <div class="form-group col-sm-4">
+            <label>Rango de Fecha de Creación:</label>
+            <div class="input-group">
+                <div class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="far fa-calendar-alt"></i>
+                    </span>
+                </div>
+                <input type="text" class="form-control float-right" id="CreationDate" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-sm-4">
+            <label>Tipo Categoria (con ViewData):</label>
+            <select class="form-control" placeholder="Tipo Categoria">
+                <option>Todos</option>
+                @foreach (var item in ViewData["ListaPeliculas"] as IList<App.TFinal.Models.Pelicula>)
+                {
+                    <option>@item.descripcionestpel</option>
+                }
+            </select>
+        </div>
+        <div class="form-group col-sm-4">
+            <label>Tipo Categoria (con ViewBag):</label>
+            <select class="form-control" placeholder="Tipo Categoria">
+                <option>Todos</option>
+                @foreach (var item in ViewBag.ListaPeliculas)
+                {
+                    <option>@item.descripcionestpel</option>
+                }
+            </select>
+        </div>
+    </div>
+</form>
+
+<div class="row">
+    @*<div class="col-sm-2">
+        <a href="#" class="btn btn-primary btn-execute-transactional" onclick="categoria.searchByFilter()">
+            <span class="fa fa-search">&nbsp;&nbsp;Buscar Categorías</span>
+        </a>
+    </div>*@
+    <div class="col-sm-2">
+        <a href="#" onclick="appVentas.getModal('@Url.Action("Create")');" data-toggle="modal"
+           data-target="#modal-container" class="btn btn-success">
+            <span class="fa fa-plus"></span>&nbsp;&nbsp;Crear Categoria
+        </a>
+    </div>
+</div>
+<br />
+<hr />

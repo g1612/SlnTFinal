@@ -68,6 +68,7 @@
     <Compile Include="DocumentoRepository.cs" />
     <Compile Include="EstadoPeliculaRepository.cs" />
     <Compile Include="GeneroRepository.cs" />
+    <Compile Include="ListaPeliculaRepository.cs" />
     <Compile Include="PagoRepository.cs" />
     <Compile Include="PeliculaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

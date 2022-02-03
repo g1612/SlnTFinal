@@ -45,6 +45,7 @@
     <Compile Include="IDocumentoRepository.cs" />
     <Compile Include="IEstadoPeliculaRepository.cs" />
     <Compile Include="IGeneroRepository.cs" />
+    <Compile Include="IListaPeliculaRepository.cs" />
     <Compile Include="IPagoRepository.cs" />
     <Compile Include="IPeliculaRepository.cs" />
     <Compile Include="IRepository.cs" />
