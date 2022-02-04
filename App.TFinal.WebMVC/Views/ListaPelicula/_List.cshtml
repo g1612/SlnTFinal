@@ -1,0 +1,117 @@
+﻿
+<div class="table-responsive">
+
+    
+    <table id="listaTable" class="table" border="0" style="width: 100%">
+        <thead>
+            <tr>
+                <th colspan="2">@Html.DisplayName("Cartelera")</th>
+
+                </th>
+
+
+                @*<th> table-hover
+                    @Html.DisplayNameFor(model => model.Duracion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.descripcionestpel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdGenero)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdEstadoPelicula)
+                </th>
+                <th></th>*@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewData["ListaPeliculas"] as IEnumerable<App.TFinal.Models.ListaPelicula>)
+            {
+                <tr>   <td> </td>  </tr>
+            @*<td rowspan="6">Celda Combinada</td>*@
+
+            <tr>
+                <td>  Titulo: @Html.DisplayName((@item.Titulo))  </td>
+            </tr>
+
+            <tr>
+                <td> Estado: @Html.DisplayFor(modelItem => item.descripcionestpel) </td>
+            </tr>
+            <tr hidden>
+                <td> Sinopsis: @Html.DisplayFor(modelItem => item.Sipnosis)</td>
+            </tr>
+            <tr hidden>
+                <td> @Html.DisplayFor(modelItem => item.IdEstadoPelicula)</td>
+            </tr>
+            <tr>
+                <td> Genero: @Html.DisplayFor(modelItem => item.nombregenero) | Duración: @Html.DisplayFor(modelItem => item.Duracion) </td>
+            </tr>
+            <tr hidden>
+                <td>  @Html.DisplayFor(modelItem => item.Estado)</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="#" onclick="appVentas.getModal('@Url.Action("Create", new { id=item.Id })');" data-toggle="modal"
+                       data-target="#modal-container" class="btn btn-warning">
+                        <span class="fa fa-edit"></span> Comprar
+                    </a>
+                    <a>    @Html.ActionLink("Details", "Details",  new { id = item.Id })
+                    </a>
+                    @*<a href="#" onclick="appVentas.getModal('Pelicula.Action("Details", new { id=item.Id })');" data-toggle="modal"
+                       data-target="#modal-container" class="btn btn-primary">
+                        <span class="fa fa-search"></span> Ver
+                    </a>*@
+              
+
+                </td>
+            </tr>
+
+
+        }
+            </tbody>
+
+            @* @foreach (var item in Model)
+            {
+                <td>
+                <tr>
+                    @Html.DisplayFor(modelItem => item.IdGenero)
+                </tr>
+                <tr>
+                    @Html.DisplayFor(modelItem => item.nombregenero)
+                </tr>
+                <tr>
+                    @Html.DisplayFor(modelItem => item.descripcionestpel)
+                </tr>
+                <tr>
+                    @Html.DisplayFor(modelItem => item.IdEstadoPelicula)
+                </tr>
+                <tr>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </tr>
+                <tr>
+                    @Html.DisplayFor(modelItem => item.Duracion)
+                </tr>
+                <tr>
+                    @Html.DisplayFor(modelItem => item.Sipnosis)
+                </tr>
+                <tr>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </tr>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                </td
+            <!-->
+                </td>
+            }*@
+
+        </table>
+
+
+</div>

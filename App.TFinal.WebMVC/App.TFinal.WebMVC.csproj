@@ -185,6 +185,7 @@
   <ItemGroup>
     <Content Include="App_JS\appVentas.js" />
     <Content Include="App_JS\cartelera.js" />
+    <Content Include="App_JS\lista.js" />
     <Content Include="App_JS\categoria.js" />
     <Content Include="App_JS\pago.js" />
     <Content Include="App_JS\pelicula.js" />
@@ -2247,6 +2248,11 @@
     <Content Include="Views\Home\View.cshtml" />
     <Content Include="Views\Pelicula\Index2.cshtml" />
     <Content Include="Views\ListaPelicula\Index.cshtml" />
+    <Content Include="Views\ListaPelicula\_List.cshtml" />
+    <Content Include="Views\ListaPelicula\_Create.cshtml" />
+    <Content Include="Views\ListaPelicula\Create.cshtml" />
+    <Content Include="Views\ListaPelicula\_Details.cshtml" />
+    <Content Include="Views\ListaPelicula\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

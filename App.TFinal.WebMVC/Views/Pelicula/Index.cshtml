@@ -9,6 +9,8 @@
 @Messages.Message("deleteMessage", "Eliminar", "danger", "El registro se eliminó satisfactoriamente")
 @Messages.Message("editMessage", "Editar", "primary", "El registro se editó satisfactoriamente")
 
+
+
 <p>
     <a href="#" onclick="appVentas.getModal('@Url.Action("Create")');" data-toggle="modal"
        data-target="#modal-container" class="btn btn-success">
@@ -16,14 +18,12 @@
     </a>
 </p>
 
+@Html.Partial("_List")
+@*@Html.Partial("_Pag1")*@
 
-
-
-@Html.Partial("_Pag1")
-
-<div id="peliculaList">
-    @Html.Partial("_List")
-</div>
+@*<div id="peliculaList">
+        @Html.Partial("_List")
+    </div>*@
 
 
 @Modal.GetModal("Mantenimiento de Pelicula")

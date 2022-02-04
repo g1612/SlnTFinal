@@ -37,9 +37,9 @@ namespace App.TFinal.WebMVC.Controllers
 
 
         // GET: ListaPelicula/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
-            return View();
+            return PartialView("_Details", await _unit.ListaPeliculas.BuscarPorId(id));
         }
 
         // GET: ListaPelicula/Create
