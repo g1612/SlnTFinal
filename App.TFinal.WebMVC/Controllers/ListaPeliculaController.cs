@@ -43,9 +43,22 @@ namespace App.TFinal.WebMVC.Controllers
         }
 
         // GET: ListaPelicula/Create
-        public ActionResult Create()
+        public async Task<ActionResult> ListaCartelera(int id)
         {
-            return View();
+            var lstCartelera = await _unit.ListaPeliculas.ListaCartelera(id);
+            ViewBag.ListaPeliculas = lstCartelera;
+            ViewData["ListaCartelera"] = lstCartelera;
+
+            return PartialView("_Create", await _unit.ListaPeliculas.ListaCartelera(id));
+        }
+
+        public ActionResult Create(int id)
+        {
+            
+
+            
+
+            return PartialView("_Create");
         }
 
         // POST: ListaPelicula/Create

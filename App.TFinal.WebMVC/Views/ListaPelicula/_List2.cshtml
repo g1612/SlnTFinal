@@ -7,10 +7,29 @@
             <tr>
                 <th colspan="2">@Html.DisplayName("Cartelera")</th>
 
-                        </tr>
+                </th>
+
+
+                @*<th> table-hover
+                    @Html.DisplayNameFor(model => model.Duracion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.descripcionestpel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdGenero)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdEstadoPelicula)
+                </th>
+                <th></th>*@
+            </tr>
         </thead>
         <tbody>
-            @foreach (var item in ViewData["ListaPeliculas"] as IEnumerable<App.TFinal.Models.ListaPelicula>)
+            @foreach (var item in ViewData["ListaCartelera"] as IEnumerable<App.TFinal.Models.ListaPelicula>)
             {
                 <tr>   <td> </td>  </tr>
             <td rowspan="6">Celda Combinada</td>
@@ -37,7 +56,7 @@
 
             <tr>
                 <td>
-                    <a href="#" onclick="appVentas.getModal('@Url.Action("ListaCartelera", "ListaPelicula", new {id=item.Id})');" data-toggle="modal"
+                    <a href="#" onclick="appVentas.getModal('@Url.Action("ListaCartelera","ListaPelicula", new {id=item.Id})');" data-toggle="modal"
                        data-target="#modal-container" class="btn btn-warning">
                         <span class="fa fa-edit"></span> Comprar               </a>
                 
