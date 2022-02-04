@@ -7,7 +7,13 @@ using System.Threading.Tasks;
 
 namespace App.TFinal.Repositories
 {
-   public interface IListaPeliculaRepository : IRepository<Pelicula>
+   public interface IListaPeliculaRepository : IRepository<ListaPelicula>
     {
+
+
+        Task<IEnumerable<ListaPelicula>> BuscarPorId(int id);
+        Task<IEnumerable<ListaPelicula>> ListarPeliculas();
+
     }
+    //coment
 }

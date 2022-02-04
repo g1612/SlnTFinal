@@ -1,0 +1,29 @@
+﻿@model IEnumerable<App.TFinal.Models.ListaPelicula>
+
+
+@Html.Partial("_List")
+<!--<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+
+</body>
+</html>-->
+<div id="peliculaList">
+        @Html.Partial("_List")
+    </div>
+
+@Modal.GetModal("Cartelera")
+
+<!--Data Table-->
+<script src="~/Content/templates/default/vendor/datatables/jquery.dataTables.js"></script>
+<script src="~/Content/templates/default/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+
+<script src="~/App_JS/appVentas.js" type="text/javascript"></script>
+@*<script src="~/App_JS/pelicula.js" type="text/javascript"></script>*@

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace App.TFinal.Repositories.Dapper
 {
-  public  class ListaPeliculaRepository : Repository<Pelicula>, IListaPeliculaRepository
+  public  class ListaPeliculaRepository :  Repository<ListaPelicula>, IListaPeliculaRepository
     {
 
         public ListaPeliculaRepository(string connectionString) : base(connectionString)
@@ -19,15 +19,43 @@ namespace App.TFinal.Repositories.Dapper
 
         }
 
-        public async Task<IEnumerable<Pelicula>> Listar2(string titulo)
+        public async Task<IEnumerable<ListaPelicula>> BuscarPorId(int id)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+           var parameters = new DynamicParameters();
+                parameters.Add("@Titulo", id);
+                return await connection.QueryAsync<ListaPelicula>("select Id , IdGenero, IdEstadoPelicula, Titulo , Duracion , Sipnosis ,Estado from dbo.Pelicula " +
+                                                        "where Id = @Titulo", parameters,
+                                                        commandType: System.Data.CommandType.Text);
+          
+
+            }
+        }
+        public async Task<IEnumerable<ListaPelicula>> buscar()
         {
             using (var connection = new SqlConnection(_connectionString))
             {
 
 
-                return await connection.QueryAsync<Pelicula>("uspListarPeliculas", commandType: System.Data.CommandType.StoredProcedure);
+                return await connection.QueryAsync<ListaPelicula>("uspListarPeliculas", commandType: System.Data.CommandType.StoredProcedure);
 
             }
         }
+
+
+        public async Task<IEnumerable<ListaPelicula>> ListarPeliculas()
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+
+
+                return await connection.QueryAsync<ListaPelicula>("uspListarPeliculas", commandType: System.Data.CommandType.StoredProcedure);
+
+            }
+        }
+
+
+
     }
 }

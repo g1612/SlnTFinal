@@ -21,13 +21,13 @@
         </div>
     </div>
     <div class="row">
-        <div class="form-group col-sm-4">
+        @*<div class="form-group col-sm-4">
             <label>Tipo Categoria (con ViewData):</label>
             <select class="form-control" placeholder="Tipo Categoria">
                 <option>Todos</option>
-                @foreach (var item in ViewData["ListaPeliculas"] as IList<App.TFinal.Models.Pelicula>)
+                @foreach (var item in ViewData["ListaPeliculas"] as IList<App.TFinal.Models.ListaPelicula>)
                 {
-                    <option>@item.descripcionestpel</option>
+                    <option>@item.Titulo</option>
                 }
             </select>
         </div>
@@ -37,10 +37,10 @@
                 <option>Todos</option>
                 @foreach (var item in ViewBag.ListaPeliculas)
                 {
-                    <option>@item.descripcionestpel</option>
+                    <option>@item.titulo</option>
                 }
             </select>
-        </div>
+        </div>*@
     </div>
 </form>
 
@@ -53,7 +53,7 @@
     <div class="col-sm-2">
         <a href="#" onclick="appVentas.getModal('@Url.Action("Create")');" data-toggle="modal"
            data-target="#modal-container" class="btn btn-success">
-            <span class="fa fa-plus"></span>&nbsp;&nbsp;Crear Categoria
+            <span class="fa fa-plus"></span> Crear Pelicula
         </a>
     </div>
 </div>
