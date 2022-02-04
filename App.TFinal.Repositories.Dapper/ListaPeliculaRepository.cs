@@ -55,7 +55,22 @@ namespace App.TFinal.Repositories.Dapper
             }
         }
 
+        public async Task<IEnumerable<ListaPelicula>> ListaCartelera(int id)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@id", id);
+                parameters.Add("@fini", DateTime.Today);
+                parameters.Add("@ffin", DateTime.Today);
+                //                return await connection.QueryAsync<ListaPelicula>("SELECT B.TITULO,C.Descripcion,A.HORARIOINICIO,A.PRECIO FROM CARTELERA A INNER JOIN PELICULA B ON A.IDPELICULA=B.ID INNER JOIN "+ 
+                //" SALA C ON A.IdSala = C.ID WHERE A.IdPelicula = '@Titulo' AND FECHAINICIO <= '05/02/2022' AND FechaFin >= '05/02/2022' ", parameters,
+                //                                                        commandType: System.Data.CommandType.Text);
+                return await connection.QueryAsync<ListaPelicula>("ListaCartelera", parameters, commandType: System.Data.CommandType.StoredProcedure);
 
+
+            }
+        }
 
     }
 }

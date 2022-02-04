@@ -1,4 +1,4 @@
-﻿@model IEnumerable<App.TFinal.Models.ListaPelicula>
+﻿@*@model IEnumerable<App.TFinal.Models.ListaPelicula>*@
 
 
 @Html.Partial("_List")
@@ -15,10 +15,10 @@
 </body>
 </html>-->
 <div id="peliculaList">
-        @Html.Partial("_List")
+       @* @Html.Partial("_List")*@
     </div>
 
-@Modal.GetModal("Cartelera")
+@Modal.GetModal("Pelicula")
 
 <!--Data Table-->
 <script src="~/Content/templates/default/vendor/datatables/jquery.dataTables.js"></script>

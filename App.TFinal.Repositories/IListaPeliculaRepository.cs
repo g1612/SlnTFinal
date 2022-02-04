@@ -13,6 +13,7 @@ namespace App.TFinal.Repositories
 
         Task<IEnumerable<ListaPelicula>> BuscarPorId(int id);
         Task<IEnumerable<ListaPelicula>> ListarPeliculas();
+        Task<IEnumerable<ListaPelicula>> ListaCartelera(int id);
 
     }
     //coment
