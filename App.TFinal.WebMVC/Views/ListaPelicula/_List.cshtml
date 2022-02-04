@@ -32,7 +32,7 @@
             @foreach (var item in ViewData["ListaPeliculas"] as IEnumerable<App.TFinal.Models.ListaPelicula>)
             {
                 <tr>   <td> </td>  </tr>
-            @*<td rowspan="6">Celda Combinada</td>*@
+            <td rowspan="6">Celda Combinada</td>
 
             <tr>
                 <td>  Titulo: @Html.DisplayName((@item.Titulo))  </td>
@@ -56,16 +56,14 @@
 
             <tr>
                 <td>
-                    <a href="#" onclick="appVentas.getModal('@Url.Action("Create", new { id=item.Id })');" data-toggle="modal"
+                    <a href="#" onclick="appVentas.getModal('@Url.Action("Create","Pelicula", new {id=item.Id})');" data-toggle="modal"
                        data-target="#modal-container" class="btn btn-warning">
-                        <span class="fa fa-edit"></span> Comprar
-                    </a>
-                    <a>    @Html.ActionLink("Details", "Details",  new { id = item.Id })
-                    </a>
-                    @*<a href="#" onclick="appVentas.getModal('Pelicula.Action("Details", new { id=item.Id })');" data-toggle="modal"
+                        <span class="fa fa-edit"></span> Comprar               </a>
+                
+                    <a href="#" onclick="appVentas.getModal('@Url.Action("Details", "Pelicula", new {id=item.Id})');" data-toggle="modal"
                        data-target="#modal-container" class="btn btn-primary">
                         <span class="fa fa-search"></span> Ver
-                    </a>*@
+                    </a>
               
 
                 </td>
