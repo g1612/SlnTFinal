@@ -48,6 +48,8 @@ namespace App.TFinal.Models
         {
             get; set;
         }
+
+       
         public string Sipnosis
         {
             get; set;
