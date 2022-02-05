@@ -1,0 +1,137 @@
+﻿@model App.TFinal.Models.Pago
+@{
+    string sala = "";
+    string titulo = "";
+    string pelicula = "";
+    string usu = "";
+    int codcart = 0;
+}
+<div>
+    <form>
+        <div>
+            <div>
+                @foreach (var item in ViewData["ListaCartelera"] as IEnumerable<App.TFinal.Models.Pago>)
+                {
+                    if (titulo != item.Titulo)
+                    {
+                        <div>
+                            <label>Pelicula:</label>
+                            <label id="titulo"> @item.Titulo</label>
+                            <input id="idpelicula" type="text" class="form-control" placeholder="Cantidad" value="@item.Id" hidden />
+                        </div>
+                        <br></br>
+                                                titulo = @item.Titulo;
+                    }
+                }
+
+            <div>
+                <label>Cantidad de Entradas:</label>
+                <input id="cantidad" type="text" class="form-control" placeholder="Cantidad" />
+                <a>  </a>
+                </div>
+
+                @foreach (var item in ViewData["ListaCartelera"] as IEnumerable<App.TFinal.Models.Pago>)
+                {
+
+                    if (sala != item.Descripcion)
+                    {
+                        <div>
+                            <label>Tipo Sala:</label>
+                            <label> @item.Descripcion</label>
+                        </div>
+
+
+                        sala = @item.Descripcion;
+                    }
+
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="btn-check" name="options" id="horario" value="@item.IdCartelera">
+                        <label class="btn btn-secondary" for="@item.IdSala">@item.HorarioInicio</label>
+
+                    </div>
+
+                    <label class="btn btn-primary" name="precio" id="precio" value="@item.Precio" hidden>S/ @item.Precio</label>
+
+
+
+                }
+
+                <div class="row">
+                    <div>
+                        <a href="#" class="btn btn-primary " onclick="calcular()">
+                            Comprar Entradas
+                        </a>
+                        @*<a href="#" onclick="appVentas.getModal('@Url.Action("Create", "Pago", new {id=3})');" data-toggle="modal"
+                   data-target="#modal-container" class="btn btn-primary">
+                    Comprar Entradas
+                </a>*@
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <script>
+                function calcular() {
+
+                    var codcart = parseInt(document.getElementById("horario").value);
+                    var Marrraqueta = parseInt(document.getElementById("precio").value);
+                   
+                }
+            </script>
+
+
+        </div>
+
+
+    </form>
+
+
+
+
+</div>
+
+
+<div class="form-horizontal" hidden>
+    <h4>Pago</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => usu, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IdUsuario, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.IdUsuario, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.IdCartelera, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => pelicula, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.IdCartelera, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Cantidad, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Cantidad, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Cantidad, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
