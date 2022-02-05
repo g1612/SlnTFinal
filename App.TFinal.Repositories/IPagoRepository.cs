@@ -20,7 +20,7 @@ namespace App.TFinal.Repositories
         Task<MensajeRetorno> RegistrarPago(Pago pago);
 
         Task<IEnumerable<Pago>> ListaPagos();
-
+        Task<IEnumerable<Pago>> ListaCartelera(int id);
 
     }
 

@@ -33,9 +33,23 @@ namespace App.TFinal.WebMVC.Controllers
         }
 
         // GET: Pago/Create
-        public ActionResult Create()
+        public async Task<ActionResult> Create(int id)
         {
-            return View();
+            var lstCartelera = await _unit.Pagos.ListaCartelera(id);
+            ViewBag.ListaCartelera = lstCartelera;
+            ViewData["ListaCartelera"] = lstCartelera;
+
+            //var lstTipoCategoria = await _unit.ListaPeliculas.BuscarPorId(id);
+            //ViewBag.ListaPeliculas = lstTipoCategoria;
+
+            //ViewData["DatPelicula"] = lstTipoCategoria;
+
+           return PartialView("_Create");
+            //return View("Create");
+
+            //await _unit.Pagos.insert(id);
+
+            //return PartialView("_Create");
         }
 
         // POST: Pago/Create
@@ -44,8 +58,10 @@ namespace App.TFinal.WebMVC.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+               
 
+                // TODO: Add insert logic here
+               
                 return RedirectToAction("Index");
             }
             catch
@@ -96,6 +112,19 @@ namespace App.TFinal.WebMVC.Controllers
             {
                 return View();
             }
+        }
+        public async Task<ActionResult> ListaCartelera(int id)
+        {
+            var lstCartelera = await _unit.Pagos.ListaCartelera(id);
+            ViewBag.ListaCartelera = lstCartelera;
+            ViewData["ListaCartelera"] = lstCartelera;
+
+            //var lstTipoCategoria = await _unit.ListaPeliculas.BuscarPorId(id);
+            //ViewBag.ListaPeliculas = lstTipoCategoria;
+
+            //ViewData["DatPelicula"] = lstTipoCategoria;
+
+            return PartialView("_Create", await _unit.Pagos.ListaCartelera(id));
         }
     }
 }

@@ -57,5 +57,30 @@ namespace App.TFinal.Models
         {
             get; set;
         }
+        [Computed]
+        [Display(Name = "Hora Inicio")]
+        public string HorarioInicio
+        {
+            get; set;
+        }
+        [Computed]
+        [Display(Name = "Descripción Sala")]
+        public string Descripcion
+        {
+            get; set;
+        }
+        [Computed]
+        public string Precio
+        {
+            get; set;
+        }
+        public int IdSala
+        {
+            get; set;
+        }
+        public int IdCartelera
+        {
+            get; set;
+        }
     }
 }

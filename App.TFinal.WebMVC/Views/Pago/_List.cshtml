@@ -1,79 +1,48 @@
-﻿@model IEnumerable<App.TFinal.Models.Pago>
+﻿@model App.TFinal.Models.Pago
+@Html.AntiForgeryToken()
 
 
 
-<table id="pagoTable" class="table table-striped table-hover table-bordered">
 
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IdUsuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdCartelera)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cantidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Total)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
+<div class="form-horizontal">
+    <h4>Pago</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.IdUsuario, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IdUsuario, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.IdUsuario, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdUsuario)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IdCartelera)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cantidad)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Total)
-                </td>
-                <td>
-                    <a href="#" onclick="appVentas.getModal('@Url.Action("Edit", new { id=item.Id })');" data-toggle="modal"
-                       data-target="#modal-container" class="btn btn-warning">
-                        <span class="fa fa-edit"></span> Editar
-                    </a>
+    <div class="form-group">
+        @Html.LabelFor(model => @idcar, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.IdCartelera, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.IdCartelera, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-                    <a href="#" onclick="appVentas.getModal('@Url.Action("Details", new { id=item.Id })');" data-toggle="modal"
-                       data-target="#modal-container" class="btn btn-primary">
-                        <span class="fa fa-search"></span> Ver
-                    </a>
-                    <a href="#" onclick="appVentas.getModal('@Url.Action("Delete", new { id=item.Id })');" data-toggle="modal"
-                       data-target="#modal-container" class="btn btn-danger">
-                        <span class="fa fa-trash"></span> Eliminar
-                    </a>
-                </td>
-            </tr>
-        }
-    </tbody>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Cantidad, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Cantidad, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Cantidad, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
+    <div class="form-group">
+        @Html.LabelFor(model => model.Total, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Total, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Total, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-    <tfoot>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IdUsuario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdCartelera)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cantidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Total)
-            </th>
-            <th></th>
-        </tr>
-    </tfoot>
-
-</table>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
