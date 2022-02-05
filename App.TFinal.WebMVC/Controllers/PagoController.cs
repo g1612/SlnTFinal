@@ -73,12 +73,14 @@ namespace App.TFinal.WebMVC.Controllers
                 string[] valores= _cartelera.Split(delimitarod);
                 string[] cant = _cantidad.Split(',');
                 string pre = valores[1];
-                int total = 0;
-                var idcod = identity.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier)
-                                .Select(c => c.Value).SingleOrDefault();
-            return PartialView("Index", await _unit.Pagos.crearpago(_cartelera , idcod,   total, cant[1]));
-              //  return RedirectToAction("ListaPelicula");
-           
+            string idcart = valores[0];
+            int total = 0;
+            string idcod = "1";//identity.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier)
+            //                .Select(c => c.Value).SingleOrDefault();
+            return PartialView("Create", await _unit.Pagos.crearpago(idcart, idcod, total, cant[1]));
+          //  return PartialView("_Create", await _unit.Pagos.ListaCartelera(id));
+            //  return RedirectToAction("ListaPelicula");
+
         }
 
         // GET: Pago/Edit/5

@@ -121,16 +121,8 @@ namespace App.TFinal.Repositories.Dapper
                 parameters.Add("@Idusuario", iduser);
                 parameters.Add("@cantidad", total);
                 parameters.Add("@cantidad", cant);
-                //parameters.Add("@fini", DateTime.Today);
-                //parameters.Add("@ffin", DateTime.Today);
-                //                return await connection.QueryAsync<ListaPelicula>("SELECT B.TITULO,C.Descripcion,A.HORARIOINICIO,A.PRECIO FROM CARTELERA A INNER JOIN PELICULA B ON A.IDPELICULA=B.ID INNER JOIN "+ 
-                //" SALA C ON A.IdSala = C.ID WHERE A.IdPelicula = '@Titulo' AND FECHAINICIO <= '05/02/2022' AND FechaFin >= '05/02/2022' ", parameters,
-                //                                                        commandType: System.Data.CommandType.Text);
-                return await connection.QueryAsync<Pago>("uspCrearPago", parameters, commandType: System.Data.CommandType.StoredProcedure);
-        // return await connection.QueryAsync<ListaPelicula>("uspListarPeliculas", commandType: System.Data.CommandType.StoredProcedure);
-
-        //var lstCartelera= connection.Database.AsQueryable<ListaCartelera> ("exec ListaCartelera '"+ id + "','" + DateTime.Today + "','" + DateTime.Today + "'").ToList();
-
+              return await connection.QueryAsync<Pago>("uspCrearPago", parameters, commandType: System.Data.CommandType.StoredProcedure);
+    
     }
 }
 
