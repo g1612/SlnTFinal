@@ -7,7 +7,7 @@
     int codcart = 0;
 }
 <div>
-    <form>
+    <form action="~/Views/Pago/Index.cshtml" method="post">
         <div>
             <div>
                 @foreach (var item in ViewData["ListaCartelera"] as IEnumerable<App.TFinal.Models.Pago>)
@@ -17,7 +17,7 @@
                         <div>
                             <label>Pelicula:</label>
                             <label id="titulo"> @item.Titulo</label>
-                            <input id="idpelicula" type="text" class="form-control" placeholder="Cantidad" value="@item.Id" hidden />
+                            <input id="idpelicula" type="text" class="form-control" name="cantidad"  placeholder="Cantidad" value="@item.Id" hidden />
                         </div>
                         <br></br>
                                                 titulo = @item.Titulo;
@@ -26,7 +26,7 @@
 
             <div>
                 <label>Cantidad de Entradas:</label>
-                <input id="cantidad" type="text" class="form-control" placeholder="Cantidad" />
+                <input id="cantidad" name="cantidad" type="text" class="form-control" placeholder="Cantidad" />
                 <a>  </a>
                 </div>
 
@@ -44,27 +44,26 @@
                         sala = @item.Descripcion;
                     }
 
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="btn-check" name="options" id="horario" value="@item.IdCartelera">
-                        <label class="btn btn-secondary" for="@item.IdSala">@item.HorarioInicio</label>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="btn-check" name="options" id="horario" value="@item.IdCartelera-@item.Precio">
+                <label class="btn btn-secondary" for="@item.IdSala">@item.HorarioInicio</label>
 
-                    </div>
 
-                    <label class="btn btn-primary" name="precio" id="precio" value="@item.Precio" hidden>S/ @item.Precio</label>
+                <input id="idpelicula" type="text" class="form-control" name="precio" placeholder=" @item.Precio" value=" @item.Precio" hidden />
 
+                <label class="btn btn-primary" name="preci" id="preci" value="@item.Precio" hidden>S/ @item.Precio</label>
+            </div>
 
 
                 }
 
                 <div class="row">
                     <div>
-                        <a href="#" class="btn btn-primary " onclick="calcular()">
-                            Comprar Entradas
-                        </a>
+                        <input type="submit" value="Create" class="btn btn-default" />
                         @*<a href="#" onclick="appVentas.getModal('@Url.Action("Create", "Pago", new {id=3})');" data-toggle="modal"
-                   data-target="#modal-container" class="btn btn-primary">
-                    Comprar Entradas
-                </a>*@
+           data-target="#modal-container" class="btn btn-primary">
+            Comprar Entradas
+        </a>*@
                     </div>
 
                 </div>

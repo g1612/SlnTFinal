@@ -1,8 +1,11 @@
-﻿using App.TFinal.UnitOfWork;
+﻿using App.TFinal.Models;
+using App.TFinal.UnitOfWork;
 using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -54,20 +57,28 @@ namespace App.TFinal.WebMVC.Controllers
 
         // POST: Pago/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public async Task<ActionResult> Create(FormCollection collection)
         {
-            try
-            {
-               
+           
+                var identity = (ClaimsPrincipal)Thread.CurrentPrincipal;
 
+                // Get the claims values
+                
+
+                string _cartelera =collection["options"];
+                string _preco = collection["precio"];
+                string _cantidad = collection["cantidad"];
                 // TODO: Add insert logic here
-               
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                char delimitarod = '-';
+                string[] valores= _cartelera.Split(delimitarod);
+                string[] cant = _cantidad.Split(',');
+                string pre = valores[1];
+                int total = 0;
+                var idcod = identity.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier)
+                                .Select(c => c.Value).SingleOrDefault();
+            return PartialView("Index", await _unit.Pagos.crearpago(_cartelera , idcod,   total, cant[1]));
+              //  return RedirectToAction("ListaPelicula");
+           
         }
 
         // GET: Pago/Edit/5
@@ -113,6 +124,8 @@ namespace App.TFinal.WebMVC.Controllers
                 return View();
             }
         }
+       
+
         public async Task<ActionResult> ListaCartelera(int id)
         {
             var lstCartelera = await _unit.Pagos.ListaCartelera(id);
@@ -126,5 +139,9 @@ namespace App.TFinal.WebMVC.Controllers
 
             return PartialView("_Create", await _unit.Pagos.ListaCartelera(id));
         }
+
+
+
+
     }
 }
