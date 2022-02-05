@@ -2254,6 +2254,8 @@
     <Content Include="Views\ListaPelicula\_Details.cshtml" />
     <Content Include="Views\ListaPelicula\Details.cshtml" />
     <Content Include="Views\ListaPelicula\_List2.cshtml" />
+    <Content Include="Views\Shared\_menuAdministrador.cshtml" />
+    <Content Include="Views\Shared\_menuVendedor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
