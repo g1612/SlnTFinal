@@ -38,9 +38,14 @@ namespace App.TFinal.WebMVC.Controllers
 
 
         // GET: Cartelera/Create
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
-            return PartialView("_Create");
+          //  return PartialView("_Create");
+
+            ViewBag.ListaPeliculas = await _unit.Peliculas.Listar();
+            ViewBag.ListaSalas = await _unit.Salas.Listar();
+            return PartialView("_Create", new Cartelera { Estado = true  /*, IdTipoCategoria = 1*/});
+
         }
 
         // POST: Cartelera/Create
@@ -73,8 +78,13 @@ namespace App.TFinal.WebMVC.Controllers
 
         // GET: Cartelera/Edit/5
         public async Task<ActionResult> Edit(int id)
+
+
         {
             //    return View(await _unit.Peliculas.Obtener(id));
+            ViewBag.ListaPeliculas = await _unit.Peliculas.Listar();
+            ViewBag.ListaSalas = await _unit.Salas.Listar();
+
             return PartialView("_Edit", await _unit.Carteleras.Obtener(id));
         }
 
@@ -120,5 +130,12 @@ namespace App.TFinal.WebMVC.Controllers
                 return View(await _unit.Carteleras.Obtener(id));
             }
         }
+
+        [Route("List")]
+        public async Task<PartialViewResult> List()
+        {
+            return PartialView("_List", await _unit.Carteleras.ListarCarteleras());
+        }
+
     }
 }

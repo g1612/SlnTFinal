@@ -39,12 +39,14 @@ namespace App.TFinal.Models
         }
 
         [Display(Name = "Fecha Inicial")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public System.DateTime FechaInicio
         {
             get; set;
         }
 
         [Display(Name = "Fecha Final")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:d}")]
         public System.DateTime FechaFin
         {
             get; set;
