@@ -21,7 +21,7 @@ namespace App.TFinal.Repositories
 
         Task<IEnumerable<Pago>> ListaPagos();
         Task<IEnumerable<Pago>> ListaCartelera(int id);
-
+        Task<IEnumerable<Pago>> crearpago(string idcart, string iduser, int total, string cant);
     }
 
 }
