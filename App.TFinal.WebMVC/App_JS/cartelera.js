@@ -29,4 +29,26 @@
             "buttons":["copy","csv","excel","pdf"]*/
         });//.buttons().container().appenTo("#categoriaTable");
     }
+
+    function searchByFilter() {
+        var peliculaid = document.getElementById("horario");
+        var categoriaName = document.getElementById("categoriaName");
+        var tipoCategoriaViewBag = document.getElementById("TipoCategoriaViewData").value;
+        var tipoCategoriaViewData = document.getElementById("TipoCategoriaViewBag").value;
+
+        console.log(categoriaId.value + '----' + categoriaName.value);
+        console.log(tipoCategoriaViewBag);
+        console.log(tipoCategoriaViewData);
+
+        if (categoriaId.value == '') categoriaId.value = '-';
+        if (categoriaName.value == '') categoriaName.value = '-';
+
+        //var url = 'Categoria/ListByFilters/?categoriaId=' + categoriaId.value + '&&categoriaNombre=' + categoriaName.value;
+        var url = '/Categoria/ListByFilters/' + categoriaId.value + '/' + categoriaName.value;
+        console.log(url);
+        $.get(url, function (data) {
+            $('#categoriaList').html(data);
+            initPaginacion();
+        })
+    }
 })(window.cartelera = window.cartelera || {})

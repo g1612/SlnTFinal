@@ -1,115 +1,99 @@
-﻿
+﻿@{
+    string sala = "";
+    string titulo = "";
+    int codcart = 0;
+}
 <div class="table-responsive">
-
-    
-    <table id="listaTable" class="table" border="0" style="width: 100%">
-        <thead>
-            <tr>
-                <th colspan="2">@Html.DisplayName("Cartelera")</th>
-
-                </th>
-
-
-                @*<th> table-hover
-                    @Html.DisplayNameFor(model => model.Duracion)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.descripcionestpel)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Estado)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IdGenero)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IdEstadoPelicula)
-                </th>
-                <th></th>*@
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in ViewData["ListaCartelera"] as IEnumerable<App.TFinal.Models.ListaPelicula>)
-            {
-                <tr>   <td> </td>  </tr>
-            <td rowspan="6">Celda Combinada</td>
-
-            <tr>
-                <td>  Titulo: @Html.DisplayName((@item.Titulo))  </td>
-            </tr>
-
-            <tr>
-                <td> Estado: @Html.DisplayFor(modelItem => item.descripcionestpel) </td>
-            </tr>
-            <tr hidden>
-                <td> Sinopsis: @Html.DisplayFor(modelItem => item.Sipnosis)</td>
-            </tr>
-            <tr hidden>
-                <td> @Html.DisplayFor(modelItem => item.IdEstadoPelicula)</td>
-            </tr>
-            <tr>
-                <td> Genero: @Html.DisplayFor(modelItem => item.nombregenero) | Duración: @Html.DisplayFor(modelItem => item.Duracion) </td>
-            </tr>
-            <tr hidden>
-                <td>  @Html.DisplayFor(modelItem => item.Estado)</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <a href="#" onclick="appVentas.getModal('@Url.Action("ListaCartelera","ListaPelicula", new {id=item.Id})');" data-toggle="modal"
-                       data-target="#modal-container" class="btn btn-warning">
-                        <span class="fa fa-edit"></span> Comprar               </a>
-                
-                    <a href="#" onclick="appVentas.getModal('@Url.Action("Details", "Pelicula", new {id=item.Id})');" data-toggle="modal"
-                       data-target="#modal-container" class="btn btn-primary">
-                        <span class="fa fa-search"></span> Ver
-                    </a>
-              
-
-                </td>
-            </tr>
+    <form>
+        <div>
+            <div>
+                @foreach (var item in ViewData["ListaCartelera"] as IEnumerable<App.TFinal.Models.ListaPelicula>)
+                {
+                    if (titulo != item.Titulo)
+                    {
+                        <div>
+                            <label>Pelicula:</label>
+                            <label id="titulo"> @item.Titulo</label>
+                            <input id="idpelicula" type="text" class="form-control" placeholder="Cantidad" value="@item.Id" hidden />
+                        </div>
+                        <div>
+                            <label>Genero:</label>
+                            <label> @item.nombregenero</label>
+                        </div>
 
 
-        }
-            </tbody>
+                        titulo = @item.Titulo;
+                    }
+                }
 
-            @* @foreach (var item in Model)
-            {
-                <td>
-                <tr>
-                    @Html.DisplayFor(modelItem => item.IdGenero)
-                </tr>
-                <tr>
-                    @Html.DisplayFor(modelItem => item.nombregenero)
-                </tr>
-                <tr>
-                    @Html.DisplayFor(modelItem => item.descripcionestpel)
-                </tr>
-                <tr>
-                    @Html.DisplayFor(modelItem => item.IdEstadoPelicula)
-                </tr>
-                <tr>
-                    @Html.DisplayFor(modelItem => item.Titulo)
-                </tr>
-                <tr>
-                    @Html.DisplayFor(modelItem => item.Duracion)
-                </tr>
-                <tr>
-                    @Html.DisplayFor(modelItem => item.Sipnosis)
-                </tr>
-                <tr>
-                    @Html.DisplayFor(modelItem => item.Estado)
-                </tr>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-                </td
-            <!-->
-                </td>
-            }*@
+                <div>
+                    <label>Cantidad de Entradas:</label>
+                    <input id="cantidad" type="text" class="form-control" placeholder="Cantidad" />
+                </div>
 
-        </table>
+                @foreach (var item in ViewData["ListaCartelera"] as IEnumerable<App.TFinal.Models.ListaPelicula>)
+                {
+
+                    if (sala != item.Descripcion)
+                    {
+                        <div>
+                            <label>Tipo Sala:</label>
+                            <label> @item.Descripcion</label>
+                        </div>
+
+
+                        sala = @item.Descripcion;
+                    }
+
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="btn-check" name="options" id="horario" value="@item.IdSala-@item.IdCartelera-@item.Precio" onchange="calcx()">
+                        <label class="btn btn-secondary" for="@item.IdSala">@item.HorarioInicio</label>
+
+                    </div>
+
+                    <label class="btn btn-primary" name="precio" id="precio" value="@item.Precio">S/ @item.Precio</label>
+
+                    <label class="btn btn-primary" name="precio" id="precio" value="@item.Precio">S/ @item.Precio</label>
+
+                }
+
+                <div class="row">
+                    <div>
+                        <a href="#" class="btn btn-primary " onclick="lisa.searchByFilter()">
+                    Comprar Entradas
+                </a>
+                        @*<a href="#" onclick="appVentas.getModal('@Url.Action("Create", "Pago", new {id=3})');" data-toggle="modal"
+                           data-target="#modal-container" class="btn btn-primary">
+                            Comprar Entradas
+                        </a>*@
+                    </div>
+
+                </div>
+            </div>
+
+
+
+                    <script languaje="javascript">
+
+                        function calcx() {
+                          
+                        //    var peliculaId =document.getElementById("idpelicula");
+                        //    var peliculaName = document.getElementById("horario");
+                        //    var peliculaId = document.getElementById("cantidad");
+                        //    console.log(peliculaId.nodeValue + '---' + peliculaName);
+                           
+                        }
+
+
+                    </script>
+
+
+                </div>
+
+
+    </form>
+
+
 
 
 </div>

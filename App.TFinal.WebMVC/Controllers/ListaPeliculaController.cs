@@ -46,8 +46,13 @@ namespace App.TFinal.WebMVC.Controllers
         public async Task<ActionResult> ListaCartelera(int id)
         {
             var lstCartelera = await _unit.ListaPeliculas.ListaCartelera(id);
-            ViewBag.ListaPeliculas = lstCartelera;
+            ViewBag.ListaCartelera = lstCartelera;
             ViewData["ListaCartelera"] = lstCartelera;
+
+            //var lstTipoCategoria = await _unit.ListaPeliculas.BuscarPorId(id);
+            //ViewBag.ListaPeliculas = lstTipoCategoria;
+
+            //ViewData["DatPelicula"] = lstTipoCategoria;
 
             return PartialView("_Create", await _unit.ListaPeliculas.ListaCartelera(id));
         }
