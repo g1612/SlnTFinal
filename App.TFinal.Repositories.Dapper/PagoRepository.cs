@@ -119,8 +119,9 @@ namespace App.TFinal.Repositories.Dapper
                 var parameters = new DynamicParameters();
         parameters.Add("@Idcartelera", idcart);
                 parameters.Add("@Idusuario", iduser);
-                parameters.Add("@cantidad", total);
+                parameters.Add("@Total", total);
                 parameters.Add("@cantidad", cant);
+
               return await connection.QueryAsync<Pago>("uspCrearPago", parameters, commandType: System.Data.CommandType.StoredProcedure);
     
     }
