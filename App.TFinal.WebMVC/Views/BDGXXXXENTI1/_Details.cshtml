@@ -1,0 +1,268 @@
+﻿@model App.TFinal.Models.BDGXXXXENTI1
+
+<dt>
+    @Html.DisplayNameFor(model => model.E1_CODENT)
+</dt>
+
+<dd>
+     @Html.DisplayFor(model => model.E1_CODENT)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.E1_TIPO)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.E1_TIPO)
+</dd>
+
+<div class="tabs">
+
+
+    <div class="tab-nav-wrapper">
+        <ul>
+            <li class="active"><a href="#tab1">Datos Generales</a></li>
+            <li><a href="#tab2">Datos del Banco</a></li>
+            <li><a href="#tab3">Datos Comerciales</a></li>
+        </ul>
+    </div>
+    <div class="tab-content-wrapper">
+        <div id="tab1" class="tab-content" style="display:none;">
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_DESENT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_DESENT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_APEPAT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_APEPAT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_APEMAT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_APEMAT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_NOMBRE1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_NOMBRE1)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_NOMBRE2)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_NOMBRE2)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_ORIG)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_ORIG)
+            </dd>
+
+        </div>
+        <div id="tab2" class="tab-content" style="display:none;">
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CTIPCTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CTIPCTA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CNUMCTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CNUMCTA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CMNDCTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CMNDCTA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CDESCTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CDESCTA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CCTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CCTA)
+            </dd>
+        </div>
+        <div id="tab3" class="tab-content" style="display:none;">
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CLASCLI)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CLASCLI)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_PAGWEB)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_PAGWEB)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_MAIL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_MAIL)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CONTACTO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CONTACTO)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_TELEFONO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_TELEFONO)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CODVEN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CODVEN)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CONDVTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CONDVTA)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_TASDSCTO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_TASDSCTO)
+            </dd>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(".tab-nav-wrapper li.active").click();
+        $($(".tab-nav-wrapper li.active a").attr("href")).show();
+        $(".tab-nav-wrapper li").click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $(".tab-nav-wrapper li").removeClass("active");
+            $(this).addClass("active");
+            var target = $(this).find("a").attr("href");
+            $(".tab-content-wrapper").find(".tab-content").hide();
+            $(".tab-content-wrapper").find(target).show();
+        })
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<style>
+    .tabs {
+        height: 400px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .tab-nav-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        position: relative !important;
+        z-index: 999 !important;
+        top: 3px;
+    }
+
+    .tabs ul {
+        display: block;
+        /*width: max-content;*/
+        overflow-y: hidden;
+        margin: 0px;
+        padding-inline-start: 5px;
+    }
+
+        .tabs ul li {
+            display: inline-block;
+            border: 1px solid grey;
+            border-bottom: 2px solid black;
+            background-color: white;
+        }
+
+            .tabs ul li.active {
+                border: 1px solid black;
+                border-bottom: 3px solid white;
+            }
+
+            .tabs ul li a {
+                text-decoration: none;
+                color: black;
+                padding: 10px;
+                line-height: 25px;
+                position: relative;
+                font-weight: bold;
+            }
+
+    .tab-content-wrapper {
+        position: relative !important;
+        z-index: 1 !important;
+        border: 1px solid black;
+        padding: 20px;
+        min-height: 40px;
+    }
+</style>
+
+@*<script src="~/Content/templates/default/vendor/datatables/jquery.dataTables.js"></script>
+<script src="~/Content/templates/default/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+
+<script src="~/App_JS/appVentas.js" type="text/javascript"></script>
+<script src="~/App_JS/categoria.js" type="text/javascript"></script>*@

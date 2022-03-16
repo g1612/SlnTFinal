@@ -1,6 +1,8 @@
 ﻿(function (appVentas) {
     appVentas.getModal = getModalContent;
     appVentas.closeModal = closeModal;
+    
+   
 
     function getModalContent(url) {
         $.get(url, function (data) {
@@ -10,10 +12,16 @@
     function closeModal(option) {
         $("button[data-dismiss='modal']").click();
         $('.modal-body').html('');
+     
         MostrarAlerta(option);
     }
 
     function MostrarAlerta(option) {
+        //if (val == null) val = 'Error al crear el registro';
+        //else {
+     /*   val = 'Se creó el registro satisfactoriamente!';*/
+        //}
+
         //$("#createMessage").addClass('hidden');
         $("#createMessage").attr('hidden', 'hidden');
         //$("#editMessage").addClass('hidden');
@@ -29,6 +37,7 @@
                 position: 'center',
                 icon: 'success',
                 title: 'Creación Correcta!',
+                
                 text: 'Se creó el registro satisfactoriamente!',
                 timer: 15000, //milisegundos
                 //confirmButtonText: 'Está seguro?',

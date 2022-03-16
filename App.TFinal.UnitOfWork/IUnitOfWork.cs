@@ -9,6 +9,8 @@ namespace App.TFinal.UnitOfWork
 {
     public interface IUnitOfWork
     {
+        IBDGXXXXENTI1Repository BDGXXXXENTI1S { get; }
+
         IEstadoPeliculaRepository EstadoPeliculas { get; }
         IDocumentoRepository Documentos { get; }
         IGeneroRepository Generos { get; }

@@ -1,0 +1,468 @@
+﻿@model App.TFinal.Models.BDGXXXXENTI1
+
+
+<td>
+
+    <h3>¿Esta seguro de eliminar el registro?</h3>
+    @using (Ajax.BeginForm("Delete", new { Controller = "BDGXXXXENTI1" },
+   new AjaxOptions
+   {
+       HttpMethod = "POST",
+       InsertionMode = InsertionMode.Replace,
+       UpdateTargetId = "modal-body",
+       OnSuccess = "categoria.success('delete');"
+   },
+   htmlAttributes: new { id = "deleteForm" }
+   ))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Aceptar" class="btn btn-primary" />
+        </div>
+        
+    }
+    @*@using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <a href="#" onclick="appVentas.getModal('@Url.Action("Delete")');" data-toggle="modal"
+                   data-target="#modal-container" value="Delete" class="btn btn-danger">
+                    <span class="fa fa-edit"></span> Delete
+                </a>
+                <a href="#" onclick="appVentas.getModal('@Url.Action("Index")');" data-toggle="modal"
+                   data-target="#modal-container" class="btn btn-primary">
+                    <span class="fa fa-edit"></span> Cancelar
+                </a>
+
+            </div>
+        }*@
+
+
+
+</td>
+
+@*<div>
+        <h4>BDGXXXXENTI1</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CODENT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CODENT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_TIPO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_TIPO)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_DESENT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_DESENT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_APEPAT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_APEPAT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_APEMAT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_APEMAT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_NOMBRE1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_NOMBRE1)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_NOMBRE2)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_NOMBRE2)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_ORIG)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_ORIG)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_TIPPER)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_TIPPER)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_TIPDOC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_TIPDOC)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CODDOC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CODDOC)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CODGRUP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CODGRUP)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_AGEN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_AGEN)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CTIPCTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CTIPCTA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CNUMCTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CNUMCTA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CMNDCTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CMNDCTA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CDESCTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CDESCTA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CCTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CCTA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CODDET)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CODDET)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CODPER)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CODPER)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_TASA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_TASA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_ESTADO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_ESTADO)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_TIPCONT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_TIPCONT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_ENTFIN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_ENTFIN)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_ZONA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_ZONA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CLASCLI)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CLASCLI)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_PAGWEB)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_PAGWEB)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_MAIL)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_MAIL)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CONTACTO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CONTACTO)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_TELEFONO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_TELEFONO)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CODVEN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CODVEN)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_MODFOR)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_MODFOR)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_USCOD)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_USCOD)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_FECCRE)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_FECCRE)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_USMOD)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_USMOD)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_FECMOD)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_FECMOD)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CONDVTA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CONDVTA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_PEN)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_PEN)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_TASDSCTO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_TASDSCTO)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CTIPA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CTIPA)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_NUMAC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_NUMAC)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_PORT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_PORT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_ESTOP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_ESTOP)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_FECAPART)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_FECAPART)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_FECAPAR)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_FECAPAR)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_FECAPBC)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_FECAPBC)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_CONDPGO)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_CONDPGO)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_COVEDT)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_COVEDT)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_DIAVIS)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_DIAVIS)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_USIMG)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_USIMG)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.E1_FECMIG)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.E1_FECMIG)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>*@

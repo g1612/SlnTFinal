@@ -1,0 +1,503 @@
+﻿@model IEnumerable<App.TFinal.Models.BDGXXXXENTI1>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table id="categoriaTable" class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.E1_CODENT)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_TIPO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E1_DESENT)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_APEPAT)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_APEMAT)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_NOMBRE1)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_NOMBRE2)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_ORIG)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_TIPPER)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_TIPDOC)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CODDOC)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CODGRUP)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_AGEN)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CTIPCTA)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CNUMCTA)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CMNDCTA)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CDESCTA)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CCTA)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CODDET)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CODPER)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_TASA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E1_ESTADO)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_TIPCONT)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_ENTFIN)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_ZONA)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CLASCLI)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_PAGWEB)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_MAIL)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CONTACTO)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_TELEFONO)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CODVEN)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_MODFOR)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_USCOD)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_FECCRE)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_USMOD)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_FECMOD)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CONDVTA)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_PEN)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_TASDSCTO)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CTIPA)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_NUMAC)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_PORT)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_ESTOP)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_FECAPART)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_FECAPAR)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_FECAPBC)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_CONDPGO)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_COVEDT)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_DIAVIS)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_USIMG)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.E1_FECMIG)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.E1_CODENT)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_TIPO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.E1_DESENT)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_APEPAT)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_APEMAT)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_NOMBRE1)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_NOMBRE2)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_ORIG)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_TIPPER)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_TIPDOC)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CODDOC)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CODGRUP)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_AGEN)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CTIPCTA)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CNUMCTA)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CMNDCTA)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CDESCTA)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CCTA)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CODDET)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CODPER)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_TASA)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.E1_ESTADO)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_TIPCONT)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_ENTFIN)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_ZONA)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CLASCLI)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_PAGWEB)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_MAIL)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CONTACTO)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_TELEFONO)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CODVEN)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_MODFOR)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_USCOD)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_FECCRE)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_USMOD)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_FECMOD)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CONDVTA)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_PEN)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_TASDSCTO)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CTIPA)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_NUMAC)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_PORT)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_ESTOP)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_FECAPART)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_FECAPAR)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_FECAPBC)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_CONDPGO)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_COVEDT)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_DIAVIS)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_USIMG)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.E1_FECMIG)
+                </td>
+                <td>
+                  
+
+                    <a href="#" onclick="appVentas.getModal('@Url.Action("Edit", new { id=item.E1_CODENT })');" data-toggle="modal"
+                       data-target="#modal-container" class="btn btn-warning">
+                        <span class="fa fa-edit"></span> Editar
+                    </a>
+
+                    <a href="#" onclick="appVentas.getModal('@Url.Action("Details", new { id=item.E1_CODENT })');" data-toggle="modal"
+                       data-target="#modal-container" class="btn btn-primary">
+                        <span class="fa fa-search"></span> Ver
+                    </a>
+                    <a href="#" onclick="appVentas.getModal('@Url.Action("Delete", new { id=item.E1_CODENT })');" data-toggle="modal"
+                       data-target="#modal-container" class="btn btn-danger">
+                        <span class="fa fa-trash"></span> Eliminar
+                    </a>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+        <tfoot>
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.E1_CODENT)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_TIPO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.E1_DESENT)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_APEPAT)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_APEMAT)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_NOMBRE1)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_NOMBRE2)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_ORIG)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_TIPPER)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_TIPDOC)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CODDOC)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CODGRUP)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_AGEN)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CTIPCTA)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CNUMCTA)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CMNDCTA)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CDESCTA)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CCTA)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CODDET)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CODPER)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_TASA)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.E1_ESTADO)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_TIPCONT)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_ENTFIN)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_ZONA)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CLASCLI)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_PAGWEB)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_MAIL)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CONTACTO)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_TELEFONO)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CODVEN)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_MODFOR)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_USCOD)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_FECCRE)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_USMOD)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_FECMOD)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CONDVTA)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_PEN)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_TASDSCTO)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CTIPA)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_NUMAC)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_PORT)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_ESTOP)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_FECAPART)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_FECAPAR)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_FECAPBC)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_CONDPGO)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_COVEDT)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_DIAVIS)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_USIMG)
+                </th>
+                <th hidden>
+                    @Html.DisplayNameFor(model => model.E1_FECMIG)
+                </th>
+                <th></th>
+            </tr>
+
+        </tfoot>
+    </table>
