@@ -48,8 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BDGXXXXENTI2.cs" />
+    <Compile Include="BDGXXXXENTI3.cs" />
     <Compile Include="Cartelera.cs" />
     <Compile Include="Documento.cs" />
+    <Compile Include="BDGXXXXENTI1.cs" />
     <Compile Include="EstadoPelicula.cs" />
     <Compile Include="Genero.cs" />
     <Compile Include="ListaPelicula.cs" />

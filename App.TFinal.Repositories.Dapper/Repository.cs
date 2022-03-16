@@ -42,6 +42,7 @@ namespace App.TFinal.Repositories.Dapper
         {
             using (var connection = new SqlConnection(_connectionString))
             {
+
                 return await connection.GetAsync<T>(id);
             }
         }
