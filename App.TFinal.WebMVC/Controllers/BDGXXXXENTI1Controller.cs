@@ -46,7 +46,10 @@ namespace App.TFinal.WebMVC.Controllers
             return PartialView("_Details", await _unit.BDGXXXXENTI1S.BuscarPorId(bdgxxxxenti1, val));
 
         }
-
+        /// <summary>
+        /// /
+        /// </summary>
+        /// <returns></returns>
 
         // GET: Cartelera/Create
         public ActionResult Create()

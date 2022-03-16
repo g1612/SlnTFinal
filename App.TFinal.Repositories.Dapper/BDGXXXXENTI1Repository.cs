@@ -279,7 +279,7 @@ namespace App.TFinal.Repositories.Dapper
                 parameters.Add("OV_message_error", message, System.Data.DbType.String,
                     System.Data.ParameterDirection.Output);
 
-                var carteleraCreada = await connection.QueryFirstOrDefaultAsync<BDGXXXXENTI1>("dbo.USP_CON_Guardarentidad",
+                var carteleraCreada = await connection.QueryFirstOrDefaultAsync<BDGXXXXENTI1>("dbo.USP_CON_modificarENTIDAD",
                     parameters, commandType: System.Data.CommandType.StoredProcedure);
 
                 message = parameters.Get<string>("@OV_message_error");
