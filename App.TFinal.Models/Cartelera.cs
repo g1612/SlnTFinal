@@ -52,6 +52,8 @@ namespace App.TFinal.Models
             get; set;
         }
 
+       
+
         [Display(Name = "H. Inicio")]
         public string HorarioInicio
         {

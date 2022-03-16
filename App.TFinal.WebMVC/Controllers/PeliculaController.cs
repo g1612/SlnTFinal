@@ -4,6 +4,8 @@ using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -44,7 +46,14 @@ namespace App.TFinal.WebMVC.Controllers
         // GET: Pelicula/Create
         public async Task<ActionResult> Create()
         {
-          //  ViewBag.ListaTipoCategorias = await _unit.Peliculas.Listar();
+
+            //var identity = (ClaimsPrincipal)Thread.CurrentPrincipal;
+
+            //// Get the claims values
+            //var idcod = identity.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier)
+            //                   .Select(c => c.Value).SingleOrDefault();
+
+            //  ViewBag.ListaTipoCategorias = await _unit.Peliculas.Listar();
             ViewBag.ListaGeneros = await _unit.Generos.Listar();
             ViewBag.ListaEstado = await _unit.EstadoPeliculas.Listar();
             return PartialView("_Create" , new Pelicula { Estado = true  /*, IdTipoCategoria = 1*/} );
