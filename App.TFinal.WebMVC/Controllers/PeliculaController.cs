@@ -4,12 +4,16 @@ using log4net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
 namespace App.TFinal.WebMVC.Controllers
 {
+
+
     public class PeliculaController : BaseController
     {
 
@@ -24,6 +28,9 @@ namespace App.TFinal.WebMVC.Controllers
             var lista = await _unit.Peliculas.ListarPeliculas();
             return View(lista);
 
+            //  ViewBag.ListaGeneros = await _unit.Generos.Listar();
+            //var lista = await _unit.Pagos.ListaPagos();
+            //return View(lista);
 
 
         }
@@ -37,9 +44,19 @@ namespace App.TFinal.WebMVC.Controllers
         }
 
         // GET: Pelicula/Create
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
-            return PartialView("_Create");
+
+            //var identity = (ClaimsPrincipal)Thread.CurrentPrincipal;
+
+            //// Get the claims values
+            //var idcod = identity.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier)
+            //                   .Select(c => c.Value).SingleOrDefault();
+
+            //  ViewBag.ListaTipoCategorias = await _unit.Peliculas.Listar();
+            ViewBag.ListaGeneros = await _unit.Generos.Listar();
+            ViewBag.ListaEstado = await _unit.EstadoPeliculas.Listar();
+            return PartialView("_Create" , new Pelicula { Estado = true  /*, IdTipoCategoria = 1*/} );
         }
 
 
@@ -73,6 +90,9 @@ namespace App.TFinal.WebMVC.Controllers
         // GET: Pelicula/Edit/5
         public async Task<ActionResult> Edit(int id)
         {
+            ViewBag.ListaGeneros = await _unit.Generos.Listar();
+            ViewBag.ListaEstado = await _unit.EstadoPeliculas.Listar();
+
             //    return View(await _unit.Peliculas.Obtener(id));
             return PartialView("_Edit", await _unit.Peliculas.Obtener(id));
         }
@@ -118,5 +138,13 @@ namespace App.TFinal.WebMVC.Controllers
                 return View(await _unit.Peliculas.Obtener(id));
             }
         }
+
+        [Route("List")]
+        public async Task<PartialViewResult> List()
+        {
+            return PartialView("_List", await _unit.Peliculas.ListarPeliculas());
+        }
+
+
     }
 }

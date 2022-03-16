@@ -48,6 +48,8 @@ namespace App.TFinal.Models
         {
             get; set;
         }
+
+        [DataType(DataType.MultilineText)]
         public string Sipnosis
         {
             get; set;

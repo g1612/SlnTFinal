@@ -34,9 +34,13 @@ namespace App.TFinal.WebMVC.Controllers
         }
 
         // GET: Usuario/Create
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
-            return View();
+
+            ViewBag.ListaTipoDoc = await _unit.Documentos.Listar();
+
+            return View("Create", new Usuario { Estado = true, IdRol = 1, Sexo = "V" });
+           
         }
 
         // POST: Usuario/Create
