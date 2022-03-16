@@ -2254,11 +2254,16 @@
     <Content Include="Views\ListaPelicula\_Details.cshtml" />
     <Content Include="Views\ListaPelicula\Details.cshtml" />
     <Content Include="Views\ListaPelicula\_List2.cshtml" />
+
+    <Content Include="Views\Shared\_menuAdministrador.cshtml" />
+    <Content Include="Views\Shared\_menuVendedor.cshtml" />
+
     <Content Include="Views\Pago\Create.cshtml" />
     <Content Include="Views\Pago\_Create.cshtml" />
     <Content Include="Views\ListaPelicula\_List3.cshtml" />
     <Content Include="Views\Pago\_List2.cshtml" />
     <Content Include="Views\Pago\Index.cshtml" />
+
     <Content Include="Views\BDGXXXXENTI1\Index.cshtml" />
     <Content Include="Views\BDGXXXXENTI1\Details.cshtml" />
     <Content Include="Views\BDGXXXXENTI1\Create.cshtml" />
@@ -2271,6 +2276,8 @@
     <Content Include="Views\BDGXXXXENTI1\_Edit.cshtml" />
     <Content Include="Views\BDGXXXXENTI1\_Details2.cshtml" />
     <Content Include="Views\BDGXXXXENTI1\_Delete.cshtml" />
+=======
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
